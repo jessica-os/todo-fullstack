@@ -3,23 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const botaoAdicionar = document.getElementById('adicionar-tarefa');
   const lista = document.getElementById('lista-tarefas');
 
-  // Função para adicionar nova tarefa
-  function adicionarTarefa() {
-    const textoTarefa = input.value.trim();
-    if (textoTarefa === '') {
-      // Exibe uma mensagem de alerta se o input estiver vazio
-      alert('Por favor, digite uma tarefa antes de adicionar!');
-      return; // Impede a adição de uma tarefa vazia
-    }
-
+  // Função que cria o elemento de uma tarefa no DOM
+  function criarElementoTarefa(tarefa) {
     const li = document.createElement('li');
     li.className = 'bg-white flex justify-between items-center px-4 py-2 rounded shadow';
 
     const span = document.createElement('span');
-    span.textContent = textoTarefa;
+    span.textContent = tarefa.nome;
     span.className = 'text-gray-800';
 
-    // Botões de editar e excluir
     const divBotoes = document.createElement('div');
     divBotoes.className = 'flex gap-2';
 
@@ -27,47 +19,36 @@ document.addEventListener('DOMContentLoaded', () => {
     btnEditar.textContent = '✏️';
     btnEditar.className = 'text-blue-500 hover:text-blue-700';
 
-    // Funcionalidade do botão de editar
+    // Funcionalidade do botão editar
     btnEditar.addEventListener('click', () => {
-      // Substitui o texto da tarefa por um campo de input para edição
       const inputEdit = document.createElement('input');
-      inputEdit.value = span.textContent; // Atribui o texto atual da tarefa
+      inputEdit.value = span.textContent;
       inputEdit.className = 'border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-purple-400';
 
-      // Substitui o span pelo input de edição
       li.replaceChild(inputEdit, span);
 
-      // Troca o botão de editar pelo de salvar
       const btnSalvar = document.createElement('button');
       btnSalvar.textContent = 'Salvar';
       btnSalvar.className = 'text-green-500 hover:text-green-700';
 
-      // Funcionalidade do botão salvar
+      // Clique no botão salvar
       btnSalvar.addEventListener('click', () => {
         const textoNovo = inputEdit.value.trim();
         if (textoNovo !== '') {
-          span.textContent = textoNovo; // Atualiza o texto da tarefa
+          span.textContent = textoNovo;
         }
-
-        // Substitui o input de volta pelo span com o novo texto
         li.replaceChild(span, inputEdit);
-        
-        // Substitui o botão salvar de volta para editar
         divBotoes.replaceChild(btnEditar, btnSalvar);
       });
 
-      // Funcionalidade do Enter para salvar
+      // Pressionar Enter para salvar
       inputEdit.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
           const textoNovo = inputEdit.value.trim();
           if (textoNovo !== '') {
-            span.textContent = textoNovo; // Atualiza o texto da tarefa
+            span.textContent = textoNovo;
           }
-
-          // Substitui o input de volta pelo span com o novo texto
           li.replaceChild(span, inputEdit);
-
-          // Substitui o botão salvar de volta para editar
           divBotoes.replaceChild(btnEditar, btnSalvar);
         }
       });
@@ -80,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnExcluir.className = 'text-red-500 hover:text-red-700';
     btnExcluir.addEventListener('click', () => {
       lista.removeChild(li);
+      // Aqui você pode adicionar um fetch DELETE se quiser apagar do backend
     });
 
     divBotoes.appendChild(btnEditar);
@@ -87,12 +69,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
     li.appendChild(span);
     li.appendChild(divBotoes);
-    lista.appendChild(li);
 
-    input.value = '';
-    input.focus();
+    return li;
   }
 
+  // Função para carregar tarefas do backend
+  async function carregarTarefas() {
+    try {
+      const resposta = await fetch('http://localhost:5000/tasks');
+      const tarefas = await resposta.json();
+      lista.innerHTML = ''; // limpa a lista antes de adicionar novamente
+
+      tarefas.forEach(tarefa => {
+        const li = criarElementoTarefa(tarefa);
+        lista.appendChild(li);
+      });
+    } catch (erro) {
+      console.error('Erro ao carregar tarefas:', erro);
+    }
+  }
+
+  // Função para adicionar nova tarefa (envia pro backend e atualiza a lista)
+  async function adicionarTarefa() {
+    const nomeTarefa = input.value.trim();
+
+    if (!nomeTarefa) {
+      alert('Digite uma tarefa antes de adicionar!');
+      return;
+    }
+
+    try {
+      const resposta = await fetch('http://localhost:5000/tasks', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ nome: nomeTarefa })
+      });
+
+      if (resposta.ok) {
+        input.value = '';
+        carregarTarefas();
+      } else {
+        alert('Erro ao adicionar tarefa.');
+      }
+    } catch (erro) {
+      console.error('Erro ao adicionar tarefa:', erro);
+    }
+  }
+
+  // Eventos de clique e tecla Enter
   botaoAdicionar.addEventListener('click', adicionarTarefa);
 
   input.addEventListener('keydown', (e) => {
@@ -100,4 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
       adicionarTarefa();
     }
   });
+
+  // Carrega tarefas ao abrir a página
+  carregarTarefas();
 });
