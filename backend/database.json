@@ -1,11 +1,11 @@
 [
     {
-        "nome": "Estudar Robot com Postman e automatizar",
+        "nome": "Estudar automatiza\u00e7\u00e3o com ROBOT FRAMEWORK",
         "id": 4,
         "concluida": false
     },
     {
-        "nome": "estudar python",
+        "nome": "Estudar python",
         "id": 5,
         "concluida": false
     },
@@ -20,7 +20,7 @@
         "concluida": false
     },
     {
-        "nome": "Fazer post linkedIn",
+        "nome": "Fazer um post no LinkedIn",
         "id": 8,
         "concluida": false
     }

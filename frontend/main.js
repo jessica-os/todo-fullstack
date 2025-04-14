@@ -31,25 +31,39 @@ document.addEventListener('DOMContentLoaded', () => {
       btnSalvar.textContent = 'Salvar';
       btnSalvar.className = 'text-green-500 hover:text-green-700';
 
-      // Clique no botão salvar
-      btnSalvar.addEventListener('click', () => {
+      const salvarEdicao = async () => {
         const textoNovo = inputEdit.value.trim();
         if (textoNovo !== '') {
-          span.textContent = textoNovo;
+          try {
+            const resposta = await fetch(`http://localhost:5000/tasks/${tarefa.id}`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ nome: textoNovo })
+            });
+
+            if (resposta.ok) {
+              const tarefaAtualizada = await resposta.json();
+              span.textContent = tarefaAtualizada.nome;
+              li.replaceChild(span, inputEdit);
+              divBotoes.replaceChild(btnEditar, btnSalvar);
+            } else {
+              alert('Erro ao editar tarefa.');
+            }
+          } catch (erro) {
+            console.error('Erro ao editar tarefa:', erro);
+          }
         }
-        li.replaceChild(span, inputEdit);
-        divBotoes.replaceChild(btnEditar, btnSalvar);
-      });
+      };
+
+      // Clique no botão salvar
+      btnSalvar.addEventListener('click', salvarEdicao);
 
       // Pressionar Enter para salvar
       inputEdit.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
-          const textoNovo = inputEdit.value.trim();
-          if (textoNovo !== '') {
-            span.textContent = textoNovo;
-          }
-          li.replaceChild(span, inputEdit);
-          divBotoes.replaceChild(btnEditar, btnSalvar);
+          salvarEdicao();
         }
       });
 
@@ -59,9 +73,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnExcluir = document.createElement('button');
     btnExcluir.textContent = '🗑️';
     btnExcluir.className = 'text-red-500 hover:text-red-700';
-    btnExcluir.addEventListener('click', () => {
-      lista.removeChild(li);
-      // Aqui você pode adicionar um fetch DELETE se quiser apagar do backend
+    btnExcluir.addEventListener('click', async () => {
+      try {
+        const resposta = await fetch(`http://localhost:5000/tasks/${tarefa.id}`, {
+          method: 'DELETE'
+        });
+
+        if (resposta.ok) {
+          lista.removeChild(li);
+        } else {
+          alert('Erro ao excluir tarefa.');
+        }
+      } catch (erro) {
+        console.error('Erro ao excluir tarefa:', erro);
+      }
     });
 
     divBotoes.appendChild(btnEditar);
