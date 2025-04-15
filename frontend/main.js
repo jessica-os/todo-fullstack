@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const API_URL = 'http://127.0.0.1:5000'; // ✅ Endereço base da API
+
   const input = document.getElementById('nova-tarefa');
   const botaoAdicionar = document.getElementById('adicionar-tarefa');
   const lista = document.getElementById('lista-tarefas');
 
-  // Função que cria o elemento de uma tarefa no DOM
   function criarElementoTarefa(tarefa) {
     const li = document.createElement('li');
     li.className = 'bg-white flex justify-between items-center px-4 py-2 rounded shadow';
@@ -19,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btnEditar.textContent = '✏️';
     btnEditar.className = 'text-blue-500 hover:text-blue-700';
 
-    // Funcionalidade do botão editar
     btnEditar.addEventListener('click', () => {
       const inputEdit = document.createElement('input');
       inputEdit.value = span.textContent;
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const textoNovo = inputEdit.value.trim();
         if (textoNovo !== '') {
           try {
-            const resposta = await fetch(`http://localhost:5000/tasks/${tarefa.id}`, {
+            const resposta = await fetch(`${API_URL}/tasks/${tarefa.id}`, {
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json'
@@ -57,10 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       };
 
-      // Clique no botão salvar
       btnSalvar.addEventListener('click', salvarEdicao);
-
-      // Pressionar Enter para salvar
       inputEdit.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
           salvarEdicao();
@@ -75,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnExcluir.className = 'text-red-500 hover:text-red-700';
     btnExcluir.addEventListener('click', async () => {
       try {
-        const resposta = await fetch(`http://localhost:5000/tasks/${tarefa.id}`, {
+        const resposta = await fetch(`${API_URL}/tasks/${tarefa.id}`, {
           method: 'DELETE'
         });
 
@@ -98,12 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
     return li;
   }
 
-  // Função para carregar tarefas do backend
   async function carregarTarefas() {
     try {
-      const resposta = await fetch('http://localhost:5000/tasks');
+      const resposta = await fetch(`${API_URL}/tasks`);
       const tarefas = await resposta.json();
-      lista.innerHTML = ''; // limpa a lista antes de adicionar novamente
+      lista.innerHTML = '';
 
       tarefas.forEach(tarefa => {
         const li = criarElementoTarefa(tarefa);
@@ -114,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Função para adicionar nova tarefa (envia pro backend e atualiza a lista)
   async function adicionarTarefa() {
     const nomeTarefa = input.value.trim();
 
@@ -124,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const resposta = await fetch('http://localhost:5000/tasks', {
+      const resposta = await fetch(`${API_URL}/tasks`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -143,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Eventos de clique e tecla Enter
   botaoAdicionar.addEventListener('click', adicionarTarefa);
 
   input.addEventListener('keydown', (e) => {
@@ -152,6 +146,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Carrega tarefas ao abrir a página
   carregarTarefas();
 });
