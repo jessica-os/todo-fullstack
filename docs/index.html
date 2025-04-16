@@ -17,17 +17,17 @@
       color: transparent;
     }
 
-    .reveal-text::after {
-      content: attr(data-text);
-      color: #ec4899; /* pink-500 */
-      position: absolute;
-      top: 0;
-      left: 0;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #ec4899;
-      animation: reveal 1s steps(20, end) forwards, blink 0.75s step-end infinite;
-    }
+.reveal-text::after {
+  content: attr(data-text);
+  color: #ec4899; /* pink-500 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #ec4899;
+  animation: reveal 1.5s steps(20, end) forwards, blink 0.75s step-end infinite;
+}
 
     @keyframes reveal {
       from {
@@ -38,10 +38,14 @@
       }
     }
 
-    @keyframes blink {
-      50% {
-        border-color: transparent;
-      }}
+   @keyframes blink {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ec4899;
+  }
+}
   </style>
 </head>
 <body class="bg-gradient-to-tr from-gray-900 via-purple-800 to-gray-900 min-h-screen flex flex-col items-center px-4 py-8">
