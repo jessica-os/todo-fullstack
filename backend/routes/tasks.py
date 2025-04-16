@@ -74,7 +74,7 @@ def concluir_tarefa(id):
     })
 
 # PATCH /tasks/<id>/voltar - Volta a tarefa para pendente
-@tasks_bp.route("/<int:id>/voltar", methods=["PATCH"])
+@tasks_bp.route("/<int:id>/voltar", methods=["PATCH", "OPTIONS"])
 def voltar_tarefa(id):
     tarefa = Task.query.get_or_404(id)
     tarefa.concluida = False
