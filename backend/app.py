@@ -7,7 +7,8 @@ import os
 app = Flask(__name__)
 
 # Libera requisições de qualquer origem (temporariamente para testes)
-CORS(app)
+CORS(app, resources={r"/tasks/*": {"origins": "*"}})
+
 
 # Configuração do banco de dados SQLite
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'

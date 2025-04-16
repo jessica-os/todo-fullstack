@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const API_URL = 'http://127.0.0.1:5000';
+  const API_URL = 'https://todo-fullstack-orju.onrender.com';
 
   const input = document.getElementById('nova-tarefa');
   const botaoAdicionar = document.getElementById('adicionar-tarefa');
