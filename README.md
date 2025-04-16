@@ -1,42 +1,62 @@
-# 📝 ToDo Fullstack App
+# 📝 To-do List Fullstack
 
-Um aplicativo de lista de tarefas com login e cadastro de usuários.
-
-Este projeto foi criado com o objetivo de praticar o desenvolvimento Fullstack, integrando tecnologias de frontend, backend e testes automatizados.
+Uma aplicação simples de lista de tarefas (To-do List), desenvolvida com **frontend em HTML, CSS (Tailwind)** e **JavaScript**, e **backend em Flask (Python)** com banco de dados **SQLite**, tudo integrado e hospedado gratuitamente.
 
 ---
 
-## 🚀 Tecnologias utilizadas
+## 🔗 Acesse o Projeto
 
-### Frontend Clássico
-- HTML, CSS e JavaScript
-- Página de entrada com botão para acessar o app
+- 🌐 **Frontend (GitHub Pages):** [https://jessica-os.github.io/todo-fullstack/](https://jessica-os.github.io/todo-fullstack/)
+- 🛠️ **Backend (Render):** [https://todo-fullstack-orju.onrender.com](https://todo-fullstack-orju.onrender.com)
 
-### SPA com React
-- React (via Vite)
-- Tailwind CSS para estilos
-- Funcionalidades: login, cadastro e gerenciamento de tarefas (CRUD)
+---
+
+## ⚙️ Funcionalidades
+
+- Adicionar novas tarefas
+- Marcar tarefas como concluídas
+- Voltar tarefas para pendentes
+- Excluir tarefas
+- Interface dividida entre "Tarefas Pendentes" e "Tarefas Concluídas"
+- Layout moderno com animação de título
+
+---
+
+## 🧰 Tecnologias Utilizadas
+
+### Frontend
+
+- HTML5
+- Tailwind CSS
+- JavaScript
+- GitHub Pages
 
 ### Backend
-- Python + Flask
-- API REST com endpoints para autenticação e tarefas
-- Banco de dados simulado com JSON ou SQLite
 
-### Testes Automatizados
-- Robot Framework + Playwright (via Browser Library)
-- Testes de:
-  - Login e cadastro
-  - Adicionar, concluir e excluir tarefas
-  - Mensagens e validações visuais
+- Python 3 + Flask
+- SQLite
+- Render (deploy)
 
 ---
 
-## 📂 Estrutura de pastas
+## ✅ Próximos Passos
 
-```bash
-todo-fullstack/
-├── frontend/           # Landing page com HTML/CSS/JS
-├── react-app/          # Aplicação em React
-├── backend/            # API Flask + banco de dados
-├── tests/robot/        # Testes automatizados com Robot Framework
-└── README.md
+- [ ] Criar testes automatizados com **Robot Framework**
+- [ ] Incluir prints ou GIF de demonstração
+- [ ] Adicionar validações mais robustas
+- [ ] Possibilidade de edição do nome da tarefa
+
+---
+
+## 👩‍💻 Autoria
+
+Projeto desenvolvido por **Jéssica Oliveira** como prática de integração fullstack e deploy de aplicações com frontend e backend separados.
+
+---
+
+## 📝 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+
+
