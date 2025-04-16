@@ -1,0 +1,20 @@
+# Ignore ambiente virtual
+venv/
+.env
+
+# Ignore banco de dados local
+instance/
+*.db
+*.sqlite3
+
+# Ignore cache e arquivos temporários
+__pycache__/
+*.py[cod]
+*.log
+
+# Ignore pastas de IDEs
+.vscode/
+.idea/
+
+# Ignore arquivos do sistema
+.DS_Store
