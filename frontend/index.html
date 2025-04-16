@@ -5,17 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>To-do List</title>
   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+   
+  <style>
+    .font-handwriting {
+      font-family: 'Nothing You Could Do', cursive;
+    }
+    .reveal-text {
+      position: relative;
+      display: inline-block;
+      color: transparent;
+    }
+
+    .reveal-text::after {
+      content: attr(data-text);
+      color: #ec4899; /* pink-500 */
+      position: absolute;
+      top: 0;
+      left: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #ec4899;
+      animation: reveal 1s steps(20, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes reveal {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }}
+  </style>
 </head>
-<body class="bg-slate-800 min-h-screen flex flex-col items-center px-4 py-8">
+<body class="bg-gradient-to-tr from-gray-900 via-purple-800 to-gray-900 min-h-screen flex flex-col items-center px-4 py-8">
 
   <header class="text-center mb-10">
-    <h1 class="text-5xl font-bold text-pink-500 mb-4">To-do List</h1>
+   <h1 class="text-5xl font-bold mb-4">
+  <span class="text-[GreenYellow]">To-do</span>
+  <span class="font-handwriting reveal-text" data-text="List">List</span>
+</h1>
+
     <div class="flex gap-2">
       <input
         id="nova-tarefa"
         type="text"
         placeholder="Digite aqui a sua tarefa"
-        class="border border-gray-300 rounded px-4 py-2 w-72 focus:outline-none focus:ring-2 focus:ring-purple-400"
+        class="border border-pink-500 rounded px-4 py-2 w-72 focus:outline-none focus:ring-2 focus:ring-purple-400"
       />
       <button
         id="adicionar-tarefa"
@@ -26,12 +68,20 @@
     </div>
   </header>
 
-  <main class="w-full max-w-md">
+  <main class="w-full max-w-3xl">
     <h2 class="text-3xl font-bold tracking-wide text-white mb-4 text-center mb-8">Tarefas</h2>
 
-    <ul id="lista-tarefas" class="space-y-3">
-      <!-- Tarefas vão aparecer aqui -->
-    </ul>
+   <div class="flex gap-6 w-full">
+  <div id="pendentes" class="flex-1">
+    <h2 class="text-xl font-bold text-white text-center ">Tarefas Pendentes</h2>
+    <ul id="lista-tarefas-pendentes" class="mt-4 border border-pink-500 rounded "></ul>
+  </div>
+
+  <div id="concluidas" class="flex-1">
+    <h2 class="text-xl font-bold text-white text-center ">Tarefas Concluídas</h2>
+    <ul id="lista-tarefas-concluidas" class="mt-4 border 500 rounded"></ul>
+  </div>
+</div>
   </main>
 
   <script src="main.js"></script>

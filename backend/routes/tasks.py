@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request  # Certifique-se de que jsonify está importado aqui
 from models import db, Task
 
 tasks_bp = Blueprint("tasks", __name__, url_prefix="/tasks")
@@ -72,6 +72,20 @@ def concluir_tarefa(id):
         "nome": tarefa.nome,
         "concluida": tarefa.concluida
     })
+
+# PATCH /tasks/<id>/voltar - Volta a tarefa para pendente
+@tasks_bp.route("/<int:id>/voltar", methods=["PATCH"])
+def voltar_tarefa(id):
+    tarefa = Task.query.get_or_404(id)
+    tarefa.concluida = False
+
+    db.session.commit()
+    return jsonify({
+        'id': tarefa.id,
+        'nome': tarefa.nome,
+        'concluida': tarefa.concluida
+    }), 200
+
 
 # DELETE /tasks/<id> - Exclui a tarefa
 @tasks_bp.route("/<int:id>", methods=["DELETE"])

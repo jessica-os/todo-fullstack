@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const API_URL = 'http://127.0.0.1:5000'; // ✅ Endereço base da API
+  const API_URL = 'http://127.0.0.1:5000';
 
   const input = document.getElementById('nova-tarefa');
   const botaoAdicionar = document.getElementById('adicionar-tarefa');
-  const lista = document.getElementById('lista-tarefas');
+  const listaPendentes = document.getElementById('lista-tarefas-pendentes');
+  const listaConcluidas = document.getElementById('lista-tarefas-concluidas');
 
   function criarElementoTarefa(tarefa) {
     const li = document.createElement('li');
-    li.className = 'bg-white flex justify-between items-center px-4 py-2 rounded shadow';
+    li.className = 'flex justify-between items-center px-4 py-2 shadow';
+    li.style.backgroundColor = tarefa.concluida ? 'GreenYellow' : 'white';
 
     const span = document.createElement('span');
     span.textContent = tarefa.nome;
@@ -16,15 +18,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const divBotoes = document.createElement('div');
     divBotoes.className = 'flex gap-2';
 
+    const btnConcluir = document.createElement('button');
+    btnConcluir.textContent = '✅';
+    btnConcluir.className = 'text-green-500 hover:text-green-700';
+    btnConcluir.addEventListener('click', async () => {
+      try {
+        const resposta = await fetch(`${API_URL}/tasks/${tarefa.id}/concluir`, {
+          method: 'PATCH',
+        });
+
+        if (resposta.ok) {
+          carregarTarefas();
+        } else {
+          alert('Erro ao concluir tarefa.');
+        }
+      } catch (erro) {
+        console.error('Erro ao concluir tarefa:', erro);
+      }
+    });
+
+    const btnVoltar = document.createElement('button');
+    btnVoltar.textContent = '🔙';
+    btnVoltar.className = 'text-yellow-500 hover:text-yellow-700';
+    btnVoltar.addEventListener('click', async () => {
+      try {
+        const resposta = await fetch(`${API_URL}/tasks/${tarefa.id}/voltar`, {
+          method: 'PATCH',
+        });
+
+        if (resposta.ok) {
+          carregarTarefas();
+        } else {
+          alert('Erro ao voltar tarefa.');
+        }
+      } catch (erro) {
+        console.error('Erro ao voltar tarefa:', erro);
+      }
+    });
+
     const btnEditar = document.createElement('button');
     btnEditar.textContent = '✏️';
     btnEditar.className = 'text-blue-500 hover:text-blue-700';
-
     btnEditar.addEventListener('click', () => {
       const inputEdit = document.createElement('input');
       inputEdit.value = span.textContent;
       inputEdit.className = 'border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-purple-400';
-
       li.replaceChild(inputEdit, span);
 
       const btnSalvar = document.createElement('button');
@@ -77,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (resposta.ok) {
-          lista.removeChild(li);
+          li.remove();
         } else {
           alert('Erro ao excluir tarefa.');
         }
@@ -85,6 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Erro ao excluir tarefa:', erro);
       }
     });
+
+    // Mostrar o botão correto conforme status da tarefa
+    if (tarefa.concluida) {
+      divBotoes.appendChild(btnVoltar);
+    } else {
+      divBotoes.appendChild(btnConcluir);
+    }
 
     divBotoes.appendChild(btnEditar);
     divBotoes.appendChild(btnExcluir);
@@ -99,11 +144,17 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const resposta = await fetch(`${API_URL}/tasks`);
       const tarefas = await resposta.json();
-      lista.innerHTML = '';
+
+      listaPendentes.innerHTML = '';
+      listaConcluidas.innerHTML = '';
 
       tarefas.forEach(tarefa => {
         const li = criarElementoTarefa(tarefa);
-        lista.appendChild(li);
+        if (tarefa.concluida) {
+          listaConcluidas.appendChild(li);
+        } else {
+          listaPendentes.appendChild(li);
+        }
       });
     } catch (erro) {
       console.error('Erro ao carregar tarefas:', erro);
@@ -139,7 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   botaoAdicionar.addEventListener('click', adicionarTarefa);
-
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       adicionarTarefa();
