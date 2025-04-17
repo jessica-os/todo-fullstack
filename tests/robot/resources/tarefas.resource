@@ -34,7 +34,6 @@ Concluir tarefa
 Editar tarefa
     Click    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA_ADICIONADA}")]//button[contains(text(),"✏️")]
     ${id_input}    Set Variable    editar-${TAREFA_ADICIONADA.replace(" ", "_")}
-    Wait For Elements State    xpath=//input[@id="${id_input}"]    visible    timeout=5s
     Fill Text    xpath=//input[@id="${id_input}"]    ${TAREFA_ADICIONADA} editada
     Click    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA_ADICIONADA}")]//button[contains(text(),"Salvar")]
     Wait For Elements State    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA_ADICIONADA} editada")]    visible    timeout=5s
