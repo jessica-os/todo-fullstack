@@ -9,33 +9,14 @@ Library    Browser
 
 *** Test Cases ***
 
-Inserir e validar tarefa
+*** Test Cases ***
+Fluxo Completo da Tarefa
     Abrir o navegador
     Abrir a página todo-list
-    Inserir nova tarefa    Estudar Cypress
-    Validar tarefa pendente
-    Fechar o navegador
-
-Concluir tarefa
-    Abrir o navegador
-    Abrir a página todo-list
-    Inserir nova tarefa    Concluir tarefa de teste
-    Validar tarefa pendente
-    Concluir tarefa
-    Fechar o navegador
-
-Editar tarefa
-    Abrir o navegador
-    Abrir a página todo-list
-    Inserir nova tarefa    Editar tarefa de teste
+    Criar tarefa única
     Validar tarefa pendente
     Editar tarefa
-    Fechar o navegador
-
-Excluir tarefa
-    Abrir o navegador
-    Abrir a página todo-list
-    Inserir nova tarefa    Excluir tarefa de teste
-    Validar tarefa pendente
+    Concluir tarefa
+    Validar tarefa concluida
     Excluir tarefa
     Fechar o navegador

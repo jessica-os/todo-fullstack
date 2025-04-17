@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function criarElementoTarefa(tarefa) {
     const li = document.createElement('li');
+    li.dataset.id = tarefa.id;
     li.className = 'flex justify-between items-center px-4 py-2 shadow';
     li.style.backgroundColor = tarefa.concluida ? 'GreenYellow' : 'white';
 
@@ -23,15 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     btnConcluir.className = 'text-green-500 hover:text-green-700';
     btnConcluir.addEventListener('click', async () => {
       try {
-        const resposta = await fetch(`${API_URL}/tasks/${tarefa.id}/concluir`, {
-          method: 'PATCH',
-        });
-
-        if (resposta.ok) {
-          carregarTarefas();
-        } else {
-          alert('Erro ao concluir tarefa.');
-        }
+        const resposta = await fetch(`${API_URL}/tasks/${tarefa.id}/concluir`, { method: 'PATCH' });
+        resposta.ok ? carregarTarefas() : alert('Erro ao concluir tarefa.');
       } catch (erro) {
         console.error('Erro ao concluir tarefa:', erro);
       }
@@ -42,15 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     btnVoltar.className = 'text-yellow-500 hover:text-yellow-700';
     btnVoltar.addEventListener('click', async () => {
       try {
-        const resposta = await fetch(`${API_URL}/tasks/${tarefa.id}/voltar`, {
-          method: 'PATCH',
-        });
-
-        if (resposta.ok) {
-          carregarTarefas();
-        } else {
-          alert('Erro ao voltar tarefa.');
-        }
+        const resposta = await fetch(`${API_URL}/tasks/${tarefa.id}/voltar`, { method: 'PATCH' });
+        resposta.ok ? carregarTarefas() : alert('Erro ao voltar tarefa.');
       } catch (erro) {
         console.error('Erro ao voltar tarefa:', erro);
       }
@@ -60,16 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
     btnEditar.textContent = '✏️';
     btnEditar.className = 'text-blue-500 hover:text-blue-700';
     btnEditar.addEventListener('click', () => {
-    const inputEdit = document.createElement('input');
-inputEdit.value = span.textContent;
-inputEdit.id = `editar-${tarefa.nome.replace(/\s+/g, '_')}`;  // Adiciona o ID no input
-inputEdit.className = 'border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-purple-400';
+      const inputEdit = document.createElement('input');
+      inputEdit.value = span.textContent;
+      inputEdit.id = `editar-${tarefa.id}`;
+      inputEdit.className = 'border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-purple-400';
 
-      
-      // Gerando ID válido (removendo espaços e substituindo por underline)
-      const idTarefa = `editar-${tarefa.id}-${span.textContent.replace(/\s+/g, '_')}`;
-      inputEdit.setAttribute('id', idTarefa);
-      
       li.replaceChild(inputEdit, span);
 
       const btnSalvar = document.createElement('button');
@@ -82,9 +64,7 @@ inputEdit.className = 'border border-gray-300 rounded px-2 py-1 focus:outline-no
           try {
             const resposta = await fetch(`${API_URL}/tasks/${tarefa.id}`, {
               method: 'PUT',
-              headers: {
-                'Content-Type': 'application/json'
-              },
+              headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ nome: textoNovo })
             });
 
@@ -117,27 +97,14 @@ inputEdit.className = 'border border-gray-300 rounded px-2 py-1 focus:outline-no
     btnExcluir.className = 'text-red-500 hover:text-red-700';
     btnExcluir.addEventListener('click', async () => {
       try {
-        const resposta = await fetch(`${API_URL}/tasks/${tarefa.id}`, {
-          method: 'DELETE'
-        });
-
-        if (resposta.ok) {
-          li.remove();
-        } else {
-          alert('Erro ao excluir tarefa.');
-        }
+        const resposta = await fetch(`${API_URL}/tasks/${tarefa.id}`, { method: 'DELETE' });
+        resposta.ok ? li.remove() : alert('Erro ao excluir tarefa.');
       } catch (erro) {
         console.error('Erro ao excluir tarefa:', erro);
       }
     });
 
-    // Mostrar o botão correto conforme status da tarefa
-    if (tarefa.concluida) {
-      divBotoes.appendChild(btnVoltar);
-    } else {
-      divBotoes.appendChild(btnConcluir);
-    }
-
+    tarefa.concluida ? divBotoes.appendChild(btnVoltar) : divBotoes.appendChild(btnConcluir);
     divBotoes.appendChild(btnEditar);
     divBotoes.appendChild(btnExcluir);
 
@@ -157,11 +124,7 @@ inputEdit.className = 'border border-gray-300 rounded px-2 py-1 focus:outline-no
 
       tarefas.forEach(tarefa => {
         const li = criarElementoTarefa(tarefa);
-        if (tarefa.concluida) {
-          listaConcluidas.appendChild(li);
-        } else {
-          listaPendentes.appendChild(li);
-        }
+        tarefa.concluida ? listaConcluidas.appendChild(li) : listaPendentes.appendChild(li);
       });
     } catch (erro) {
       console.error('Erro ao carregar tarefas:', erro);
@@ -170,7 +133,6 @@ inputEdit.className = 'border border-gray-300 rounded px-2 py-1 focus:outline-no
 
   async function adicionarTarefa() {
     const nomeTarefa = input.value.trim();
-
     if (!nomeTarefa) {
       alert('Digite uma tarefa antes de adicionar!');
       return;
@@ -179,9 +141,7 @@ inputEdit.className = 'border border-gray-300 rounded px-2 py-1 focus:outline-no
     try {
       const resposta = await fetch(`${API_URL}/tasks`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nome: nomeTarefa })
       });
 
