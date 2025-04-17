@@ -29,14 +29,22 @@ Validar tarefa pendente
 Editar tarefa
     ${element}    Get Element    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]
     ${id}         Get Attribute    ${element}    data-id
-    Click    xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="${id}"]//button[contains(text(),"✏️")]
-    ${input_id}   Set Variable    editar-${id}-${TAREFA.replace(" ", "_")}
+    Click         xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="${id}"]//button[contains(text(),"✏️")]
+
+    ${tarefa_formatada}    Evaluate    "${TAREFA}".replace(" ", "_")
+    ${input_id}            Set Variable    editar-${id}-${tarefa_formatada}
+
     Wait For Elements State    id=${input_id}    visible    timeout=5s
+
     ${nova_tarefa}    Set Variable    ${TAREFA} editada
-    Fill Text    id=${input_id}    ${nova_tarefa}
-    Click    xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="${id}"]//button[contains(text(),"Salvar")]
+    Fill Text         id=${input_id}    ${nova_tarefa}
+
+    Click             xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="${id}"]//button[contains(text(),"Salvar")]
     Wait For Elements State    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${nova_tarefa}")]    visible    timeout=5s
+
     Set Suite Variable    ${TAREFA}    ${nova_tarefa}
+
+
 
 
 Concluir tarefa
