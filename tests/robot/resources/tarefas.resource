@@ -28,11 +28,11 @@ Criar tarefa única
 
 Validar tarefa pendente
     Wait For Elements State    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]    visible    timeout=5s
-    Log    Validando se a tarefa "${TAREFA}" está pendente...
+    Log    Validando tarefa pendente "${TAREFA}"...
 
 Editar tarefa
     Log    Editando a tarefa "${TAREFA}"...
-    ${element}    Get Element    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]    
+    ${element}    Get Element    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]
     ${id}         Get Attribute    ${element}    data-id
     Click    xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="${id}"]//button[contains(text(),"✏️")]
     ${input_id}   Set Variable    editar-${id}-${TAREFA.replace(" ", "_")}
@@ -44,15 +44,19 @@ Editar tarefa
     Set Suite Variable    ${TAREFA}    ${nova_tarefa}
     Log    Tarefa "${TAREFA}" editada com sucesso!
 
+Validar tarefa editada
+    Wait For Elements State    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]    visible    timeout=5s
+    Log    Validando se a tarefa "${TAREFA}" foi editada...
+
 Concluir tarefa
     Log    Concluindo a tarefa "${TAREFA}"...
     Click    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]//button[1]
     Wait For Elements State    xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]    visible    timeout=5s
     Log    Tarefa "${TAREFA}" concluída com sucesso!
 
-Validar tarefa concluida
+Validar tarefa concluída
     Wait For Elements State    xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]    visible    timeout=5s
-    Log    Validando se a tarefa "${TAREFA}" está concluída...
+    Log    Validando se a tarefa "${TAREFA}" foi concluída...
 
 Excluir tarefa
     Log    Excluindo a tarefa "${TAREFA}"...
@@ -63,4 +67,3 @@ Excluir tarefa
 Fechar o navegador
     Close Browser
     Log To Console    Navegador fechado com sucesso!
-

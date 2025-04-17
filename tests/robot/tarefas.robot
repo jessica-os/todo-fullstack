@@ -6,9 +6,6 @@ Library    OperatingSystem
 Library    String
 Library    Browser
 
-
-*** Test Cases ***
-
 *** Test Cases ***
 Fluxo Completo da Tarefa
     Abrir o navegador
@@ -16,7 +13,8 @@ Fluxo Completo da Tarefa
     Criar tarefa única
     Validar tarefa pendente
     Editar tarefa
+    Validar tarefa editada
     Concluir tarefa
-    Validar tarefa concluida
+    Validar tarefa concluída
     Excluir tarefa
     Fechar o navegador
