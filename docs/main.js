@@ -60,9 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
     btnEditar.textContent = '✏️';
     btnEditar.className = 'text-blue-500 hover:text-blue-700';
     btnEditar.addEventListener('click', () => {
-      const inputEdit = document.createElement('input');
-      inputEdit.value = span.textContent;
-      inputEdit.className = 'border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-purple-400';
+    const inputEdit = document.createElement('input');
+inputEdit.value = span.textContent;
+inputEdit.id = `editar-${tarefa.nome.replace(/\s+/g, '_')}`;  // Adiciona o ID no input
+inputEdit.className = 'border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-purple-400';
+
+      
+      // Gerando ID válido (removendo espaços e substituindo por underline)
+      const idTarefa = `editar-${tarefa.id}-${span.textContent.replace(/\s+/g, '_')}`;
+      inputEdit.setAttribute('id', idTarefa);
+      
       li.replaceChild(inputEdit, span);
 
       const btnSalvar = document.createElement('button');
