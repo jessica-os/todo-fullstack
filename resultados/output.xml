@@ -1,258 +1,643 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.2 on win32)" generated="2025-04-22T12:36:41.009209" rpa="false" schemaversion="5">
-<suite id="s1" name="Api Tests" source="C:\Users\User\Desktop\Todo-Fullstack\tests\api_tests.robot">
+<robot generator="Robot 7.2.2 (Python 3.12.2 on win32)" generated="2025-04-22T12:41:39.642685" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\User\Desktop\Todo-Fullstack\tests">
+<suite id="s1-s1" name="Api Tests" source="C:\Users\User\Desktop\Todo-Fullstack\tests\api_tests.robot">
 <kw name="Disable SSL Warnings" type="SETUP">
 <kw name="Set Environment Variable" owner="OperatingSystem">
-<msg time="2025-04-22T12:36:42.269759" level="INFO">Environment variable 'PYTHONWARNINGS' set to value 'ignore::InsecureRequestWarning'.</msg>
+<msg time="2025-04-22T12:41:41.265517" level="INFO">Environment variable 'PYTHONWARNINGS' set to value 'ignore::InsecureRequestWarning'.</msg>
 <arg>PYTHONWARNINGS</arg>
 <arg>ignore::InsecureRequestWarning</arg>
 <doc>Sets an environment variable to a specified value.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.269759" elapsed="0.000000"/>
+<status status="PASS" start="2025-04-22T12:41:41.264538" elapsed="0.000979"/>
 </kw>
-<status status="PASS" start="2025-04-22T12:36:42.268759" elapsed="0.001000"/>
+<status status="PASS" start="2025-04-22T12:41:41.263536" elapsed="0.001981"/>
 </kw>
-<test id="s1-t1" name="Criar Tarefa" line="19">
+<test id="s1-s1-t1" name="Criar Tarefa" line="19">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:36:42.271759" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-04-22T12:41:41.266519" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>todo</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-04-22T12:36:42.270759" elapsed="0.001000"/>
+<status status="PASS" start="2025-04-22T12:41:41.266519" elapsed="0.000000"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-04-22T12:36:42.272759" level="INFO">${dados} = {'nome': 'Estudar Robot'}</msg>
+<msg time="2025-04-22T12:41:41.267527" level="INFO">${dados} = {'nome': 'Estudar Robot'}</msg>
 <var>${dados}</var>
 <arg>nome=Estudar Robot</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.271759" elapsed="0.001000"/>
+<status status="PASS" start="2025-04-22T12:41:41.267527" elapsed="0.000000"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:36:42.615769" level="INFO">POST Request : url=https://todo-fullstack-orju.onrender.com/tasks 
+<msg time="2025-04-22T12:41:42.031103" level="INFO">POST Request : url=https://todo-fullstack-orju.onrender.com/tasks 
  path_url=/tasks 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '25', 'Content-Type': 'application/json'} 
  body=b'{"nome": "Estudar Robot"}' 
  </msg>
-<msg time="2025-04-22T12:36:42.615769" level="INFO">POST Response : url=https://todo-fullstack-orju.onrender.com/tasks 
+<msg time="2025-04-22T12:41:42.032102" level="INFO">POST Response : url=https://todo-fullstack-orju.onrender.com/tasks 
  status=201, reason=Created 
- headers={'Date': 'Tue, 22 Apr 2025 15:36:42 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': '1f314556-f9c7-46db', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '934632c16a1a09d7-SJK', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Tue, 22 Apr 2025 15:41:42 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': '3b6f71d9-50db-460a', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '93463a0f1e4b09d3-SJK', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"concluida":false,"id":1,"nome":"Estudar Robot"}
  
  </msg>
-<msg time="2025-04-22T12:36:42.615769" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-04-22T12:41:42.032102" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-04-22T12:36:42.616752" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-04-22T12:41:42.033113" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>todo</arg>
 <arg>/tasks</arg>
 <arg>json=${dados}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.272759" elapsed="0.343993"/>
+<status status="PASS" start="2025-04-22T12:41:41.268519" elapsed="0.764594"/>
 </kw>
 <kw name="Convert To Dictionary" owner="Collections">
-<msg time="2025-04-22T12:36:42.617767" level="INFO">${task} = {'concluida': False, 'id': 1, 'nome': 'Estudar Robot'}</msg>
+<msg time="2025-04-22T12:41:42.035101" level="INFO">${task} = {'concluida': False, 'id': 1, 'nome': 'Estudar Robot'}</msg>
 <var>${task}</var>
 <arg>${response.json()}</arg>
 <doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.616752" elapsed="0.001015"/>
+<status status="PASS" start="2025-04-22T12:41:42.033113" elapsed="0.001988"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2025-04-22T12:36:42.618767" level="INFO">${task_id} = 1</msg>
+<msg time="2025-04-22T12:41:42.036102" level="INFO">${task_id} = 1</msg>
 <var>${task_id}</var>
 <arg>${task}</arg>
 <arg>id</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.618767" elapsed="0.000000"/>
+<status status="PASS" start="2025-04-22T12:41:42.035101" elapsed="0.001001"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-04-22T12:36:42.619767" level="INFO">${task_id} = 1</msg>
+<msg time="2025-04-22T12:41:42.037102" level="INFO">${task_id} = 1</msg>
 <arg>${task_id}</arg>
 <arg>${task_id}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.618767" elapsed="0.001000"/>
+<status status="PASS" start="2025-04-22T12:41:42.036102" elapsed="0.001000"/>
 </kw>
 <tag>POST</tag>
-<status status="PASS" start="2025-04-22T12:36:42.270759" elapsed="0.349008"/>
+<status status="PASS" start="2025-04-22T12:41:41.265517" elapsed="0.771585"/>
 </test>
-<test id="s1-t2" name="Concluir Tarefa" line="28">
+<test id="s1-s1-t2" name="Concluir Tarefa" line="28">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:36:42.621753" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-04-22T12:41:42.041111" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>todo</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-04-22T12:36:42.621753" elapsed="0.000000"/>
+<status status="PASS" start="2025-04-22T12:41:42.040112" elapsed="0.000999"/>
 </kw>
 <kw name="PATCH On Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:36:42.923462" level="INFO">PATCH Request : url=https://todo-fullstack-orju.onrender.com/tasks/1/concluir 
+<msg time="2025-04-22T12:41:42.544857" level="INFO">PATCH Request : url=https://todo-fullstack-orju.onrender.com/tasks/1/concluir 
  path_url=/tasks/1/concluir 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2025-04-22T12:36:42.923462" level="INFO">PATCH Response : url=https://todo-fullstack-orju.onrender.com/tasks/1/concluir 
+<msg time="2025-04-22T12:41:42.544857" level="INFO">PATCH Response : url=https://todo-fullstack-orju.onrender.com/tasks/1/concluir 
  status=200, reason=OK 
- headers={'Date': 'Tue, 22 Apr 2025 15:36:43 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': '2c1fe783-7a7e-49f2', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '934632c3890309d5-SJK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Tue, 22 Apr 2025 15:41:42 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': 'fc56386d-efaa-43b7', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '93463a134b5b09d1-SJK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"concluida":true,"id":1,"nome":"Estudar Robot"}
  
  </msg>
-<msg time="2025-04-22T12:36:42.923462" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-04-22T12:41:42.545857" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-04-22T12:36:42.924439" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-04-22T12:41:42.546840" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>todo</arg>
 <arg>/tasks/${task_id}/concluir</arg>
 <doc>Sends a PATCH request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.622768" elapsed="0.301671"/>
+<status status="PASS" start="2025-04-22T12:41:42.042104" elapsed="0.505781"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-22T12:36:42.926459" level="INFO">{'concluida': True, 'id': 1, 'nome': 'Estudar Robot'}</msg>
+<msg time="2025-04-22T12:41:42.549885" level="INFO">{'concluida': True, 'id': 1, 'nome': 'Estudar Robot'}</msg>
 <arg>${response.json()}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.925442" elapsed="0.001017"/>
+<status status="PASS" start="2025-04-22T12:41:42.548885" elapsed="0.001999"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <arg>${response}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.927460" elapsed="0.000000"/>
+<status status="PASS" start="2025-04-22T12:41:42.551884" elapsed="0.001003"/>
 </kw>
 <kw name="Convert To Dictionary" owner="Collections">
-<msg time="2025-04-22T12:36:42.929459" level="INFO">${task} = {'concluida': True, 'id': 1, 'nome': 'Estudar Robot'}</msg>
+<msg time="2025-04-22T12:41:42.555847" level="INFO">${task} = {'concluida': True, 'id': 1, 'nome': 'Estudar Robot'}</msg>
 <var>${task}</var>
 <arg>${response.json()}</arg>
 <doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.928459" elapsed="0.001000"/>
+<status status="PASS" start="2025-04-22T12:41:42.553885" elapsed="0.002959"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
-<msg time="2025-04-22T12:36:42.930459" level="INFO">Argument types are:
+<msg time="2025-04-22T12:41:42.559886" level="INFO">Argument types are:
 &lt;class 'bool'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${task['concluida']}</arg>
 <arg>True</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.929459" elapsed="0.001000"/>
+<status status="PASS" start="2025-04-22T12:41:42.557856" elapsed="0.002030"/>
 </kw>
 <tag>PATCH</tag>
-<status status="PASS" start="2025-04-22T12:36:42.620771" elapsed="0.310693"/>
+<status status="PASS" start="2025-04-22T12:41:42.039104" elapsed="0.521751"/>
 </test>
-<test id="s1-t3" name="Atualizar Tarefa" line="37">
+<test id="s1-s1-t3" name="Atualizar Tarefa" line="37">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:36:42.934437" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-04-22T12:41:42.566856" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>todo</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-04-22T12:36:42.934437" elapsed="0.001006"/>
+<status status="PASS" start="2025-04-22T12:41:42.565860" elapsed="0.000996"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-04-22T12:36:42.936443" level="INFO">${novos_dados} = {'nome': 'Estudar Playwright'}</msg>
+<msg time="2025-04-22T12:41:42.568884" level="INFO">${novos_dados} = {'nome': 'Estudar Playwright'}</msg>
 <var>${novos_dados}</var>
 <arg>nome=Estudar Playwright</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.935443" elapsed="0.001000"/>
+<status status="PASS" start="2025-04-22T12:41:42.567858" elapsed="0.001026"/>
 </kw>
 <kw name="PUT On Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:36:43.332937" level="INFO">PUT Request : url=https://todo-fullstack-orju.onrender.com/tasks/1 
+<msg time="2025-04-22T12:41:43.260388" level="INFO">PUT Request : url=https://todo-fullstack-orju.onrender.com/tasks/1 
  path_url=/tasks/1 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '30', 'Content-Type': 'application/json'} 
  body=b'{"nome": "Estudar Playwright"}' 
  </msg>
-<msg time="2025-04-22T12:36:43.332937" level="INFO">PUT Response : url=https://todo-fullstack-orju.onrender.com/tasks/1 
+<msg time="2025-04-22T12:41:43.260388" level="INFO">PUT Response : url=https://todo-fullstack-orju.onrender.com/tasks/1 
  status=200, reason=OK 
- headers={'Date': 'Tue, 22 Apr 2025 15:36:43 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': 'b597acef-fd59-4ee3', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '934632c5bb3009d3-SJK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Tue, 22 Apr 2025 15:41:43 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': '2b4c4c48-f9b5-4ecc', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '93463a168d8a09d1-SJK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"concluida":true,"id":1,"nome":"Estudar Playwright"}
  
  </msg>
-<msg time="2025-04-22T12:36:43.332937" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-04-22T12:41:43.260388" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-04-22T12:36:43.333952" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-04-22T12:41:43.263302" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>todo</arg>
 <arg>/tasks/${task_id}</arg>
 <arg>json=${novos_dados}</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-04-22T12:36:42.936443" elapsed="0.397509"/>
+<status status="PASS" start="2025-04-22T12:41:42.569885" elapsed="0.693947"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-22T12:36:43.335937" level="INFO">{'concluida': True, 'id': 1, 'nome': 'Estudar Playwright'}</msg>
+<msg time="2025-04-22T12:41:43.265862" level="INFO">{'concluida': True, 'id': 1, 'nome': 'Estudar Playwright'}</msg>
 <arg>${response.json()}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-22T12:36:43.334880" elapsed="0.001057"/>
+<status status="PASS" start="2025-04-22T12:41:43.263832" elapsed="0.002030"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <arg>${response}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-04-22T12:36:43.336943" elapsed="0.000966"/>
+<status status="PASS" start="2025-04-22T12:41:43.266896" elapsed="0.000999"/>
 </kw>
 <kw name="Convert To Dictionary" owner="Collections">
-<msg time="2025-04-22T12:36:43.339569" level="INFO">${task} = {'concluida': True, 'id': 1, 'nome': 'Estudar Playwright'}</msg>
+<msg time="2025-04-22T12:41:43.269685" level="INFO">${task} = {'concluida': True, 'id': 1, 'nome': 'Estudar Playwright'}</msg>
 <var>${task}</var>
 <arg>${response.json()}</arg>
 <doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
-<status status="PASS" start="2025-04-22T12:36:43.338541" elapsed="0.001028"/>
+<status status="PASS" start="2025-04-22T12:41:43.268648" elapsed="0.002035"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${task['nome']}</arg>
 <arg>Estudar Playwright</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-04-22T12:36:43.340433" elapsed="0.001029"/>
+<status status="PASS" start="2025-04-22T12:41:43.271092" elapsed="0.001034"/>
 </kw>
 <tag>PUT</tag>
-<status status="PASS" start="2025-04-22T12:36:42.933459" elapsed="0.409001"/>
+<status status="PASS" start="2025-04-22T12:41:42.563888" elapsed="0.709238"/>
 </test>
-<test id="s1-t4" name="Deletar Tarefa" line="47">
+<test id="s1-s1-t4" name="Deletar Tarefa" line="47">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:36:43.345460" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-04-22T12:41:43.278127" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>todo</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-04-22T12:36:43.344473" elapsed="0.000987"/>
+<status status="PASS" start="2025-04-22T12:41:43.278127" elapsed="0.000998"/>
 </kw>
 <kw name="DELETE On Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:36:43.742264" level="INFO">DELETE Request : url=https://todo-fullstack-orju.onrender.com/tasks/1 
+<msg time="2025-04-22T12:41:43.670481" level="INFO">DELETE Request : url=https://todo-fullstack-orju.onrender.com/tasks/1 
  path_url=/tasks/1 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2025-04-22T12:36:43.743263" level="INFO">DELETE Response : url=https://todo-fullstack-orju.onrender.com/tasks/1 
+<msg time="2025-04-22T12:41:43.670481" level="INFO">DELETE Response : url=https://todo-fullstack-orju.onrender.com/tasks/1 
  status=200, reason=OK 
- headers={'Date': 'Tue, 22 Apr 2025 15:36:43 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': '38edbbe7-eaac-4fcd', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '934632c85dba09d7-SJK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Tue, 22 Apr 2025 15:41:43 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': 'efb4ca2c-2529-425a', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '93463a1b2aec09d9-SJK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"mensagem":"Tarefa exclu\u00edda com sucesso"}
  
  </msg>
-<msg time="2025-04-22T12:36:43.743263" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-04-22T12:41:43.670481" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-04-22T12:36:43.744288" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-04-22T12:41:43.672456" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>todo</arg>
 <arg>/tasks/${task_id}</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-04-22T12:36:43.346460" elapsed="0.397828"/>
+<status status="PASS" start="2025-04-22T12:41:43.280127" elapsed="0.392329"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-22T12:36:43.747259" level="INFO">{'mensagem': 'Tarefa excluída com sucesso'}</msg>
+<msg time="2025-04-22T12:41:43.674455" level="INFO">{'mensagem': 'Tarefa excluída com sucesso'}</msg>
 <arg>${response.json()}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-22T12:36:43.745271" elapsed="0.001988"/>
+<status status="PASS" start="2025-04-22T12:41:43.673474" elapsed="0.002007"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <arg>${response}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-04-22T12:36:43.748260" elapsed="0.001001"/>
+<status status="PASS" start="2025-04-22T12:41:43.676447" elapsed="0.001002"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${response.json()}[mensagem]</arg>
 <arg>Tarefa excluída com sucesso</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-04-22T12:36:43.749261" elapsed="0.002002"/>
+<status status="PASS" start="2025-04-22T12:41:43.678483" elapsed="0.002989"/>
 </kw>
 <tag>DELETE</tag>
-<status status="PASS" start="2025-04-22T12:36:43.343490" elapsed="0.408770"/>
+<status status="PASS" start="2025-04-22T12:41:43.276163" elapsed="0.406042"/>
 </test>
-<status status="PASS" start="2025-04-22T12:36:41.015209" elapsed="2.740039"/>
+<status status="PASS" start="2025-04-22T12:41:39.712014" elapsed="3.973204"/>
+</suite>
+<suite id="s1-s2" name="Robot" source="C:\Users\User\Desktop\Todo-Fullstack\tests\robot">
+<suite id="s1-s2-s1" name="Tarefas" source="C:\Users\User\Desktop\Todo-Fullstack\tests\robot\tarefas.robot">
+<test id="s1-s2-s1-t1" name="Fluxo Completo da Tarefa" line="11">
+<kw name="Abrir o navegador" owner="tarefas">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-04-22T12:41:44.836426" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\User\\Desktop\\Todo-Fullstack\\resultados\\browser\\traces\\temp\\6d6eb913-1d6c-4adb-a06b-019b56d53043"}</msg>
+<msg time="2025-04-22T12:41:44.987391" level="INFO">Starting Browser process C:\Python312\Lib\site-packages\Browser\wrapper\index.js using port 51803</msg>
+<msg time="2025-04-22T12:41:44.988388" level="INFO">Node startup parameters: ['node', 'C:\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js', '51803']</msg>
+<msg time="2025-04-22T12:41:49.975317" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\User\\Desktop\\Todo-Fullstack\\resultados\\browser\\traces\\temp\\6d6eb913-1d6c-4adb-a06b-019b56d53043"}</msg>
+<arg>headless=${False}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-04-22T12:41:44.832407" elapsed="5.143910"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-04-22T12:41:49.983317" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2025-04-22T12:41:50.100675" level="INFO">Successfully created context. </msg>
+<msg time="2025-04-22T12:41:50.101673" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-04-22T12:41:49.977318" elapsed="0.124355"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Abrindo o navegador...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-22T12:41:50.102670" elapsed="0.026005"/>
+</kw>
+<status status="PASS" start="2025-04-22T12:41:44.829408" elapsed="5.300269"/>
+</kw>
+<kw name="Abrir a página todo-list" owner="tarefas">
+<kw name="New Page" owner="Browser">
+<msg time="2025-04-22T12:41:52.116561" level="INFO">Successfully initialized new page object and opened url: https://jessica-os.github.io/todo-fullstack/</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-04-22T12:41:50.134673" elapsed="1.982889"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-04-22T12:41:52.209292" level="INFO">Waited for Element with selector h1 at state visible</msg>
+<arg>h1</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-04-22T12:41:52.118560" elapsed="0.090732"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Página carregada com sucesso!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-22T12:41:52.210291" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2025-04-22T12:41:50.132676" elapsed="2.078616"/>
+</kw>
+<kw name="Criar tarefa única" owner="tarefas">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-22T12:41:52.213285" level="INFO">${rand} = 3937</msg>
+<var>${rand}</var>
+<arg>random.randint(1000, 9999)</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-22T12:41:52.212288" elapsed="0.000997"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-22T12:41:52.215294" level="INFO">${tarefa} = Tarefa teste 3937</msg>
+<var>${tarefa}</var>
+<arg>Tarefa teste ${rand}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-22T12:41:52.213285" elapsed="0.002009"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-04-22T12:41:52.217299" level="INFO">Fills the text 'Tarefa teste 3937' in the given field.</msg>
+<arg>xpath=//input[@id="nova-tarefa"]</arg>
+<arg>${tarefa}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-04-22T12:41:52.216297" elapsed="0.073924"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-04-22T12:41:52.293224" level="INFO">Clicks the element 'xpath=//button[@id="adicionar-tarefa"]'.</msg>
+<arg>xpath=//button[@id="adicionar-tarefa"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-22T12:41:52.291225" elapsed="0.111238"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-04-22T12:41:53.666622" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 3937")] at state visible</msg>
+<arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${tarefa}")]</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-04-22T12:41:52.402463" elapsed="1.265158"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-04-22T12:41:53.674615" level="INFO">${TAREFA} = Tarefa teste 3937</msg>
+<arg>${TAREFA}</arg>
+<arg>${tarefa}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-04-22T12:41:53.669623" elapsed="0.005994"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T12:41:53.679613" level="INFO">Tarefa "Tarefa teste 3937" criada com sucesso!</msg>
+<arg>Tarefa "${tarefa}" criada com sucesso!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T12:41:53.676620" elapsed="0.004008"/>
+</kw>
+<tag>Criando a tarefa</tag>
+<status status="PASS" start="2025-04-22T12:41:52.212288" elapsed="1.469333"/>
+</kw>
+<kw name="Validar tarefa pendente" owner="tarefas">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-04-22T12:41:53.735616" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 3937")] at state visible</msg>
+<arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-04-22T12:41:53.687620" elapsed="0.048996"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T12:41:53.739616" level="INFO">Validando tarefa pendente "Tarefa teste 3937"...</msg>
+<arg>Validando tarefa pendente "${TAREFA}"...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T12:41:53.737615" elapsed="0.002999"/>
+</kw>
+<tag>Validando a criação da tarefa</tag>
+<status status="PASS" start="2025-04-22T12:41:53.684617" elapsed="0.057000"/>
+</kw>
+<kw name="Editar tarefa" owner="tarefas">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T12:41:53.752622" level="INFO">Editando a tarefa "Tarefa teste 3937"...</msg>
+<arg>Editando a tarefa "${TAREFA}"...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T12:41:53.750624" elapsed="0.002998"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2025-04-22T12:41:53.807065" level="INFO">Locator found successfully.</msg>
+<msg time="2025-04-22T12:41:53.808064" level="INFO">${element} = xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 3937")]</msg>
+<var>${element}</var>
+<arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-04-22T12:41:53.754625" elapsed="0.053439"/>
+</kw>
+<kw name="Get Attribute" owner="Browser">
+<msg time="2025-04-22T12:41:53.914552" level="INFO">Attribute is: '1'</msg>
+<msg time="2025-04-22T12:41:53.915558" level="INFO">${id} = 1</msg>
+<var>${id}</var>
+<arg>${element}</arg>
+<arg>data-id</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-22T12:41:53.809066" elapsed="0.106492"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-04-22T12:41:54.046379" level="INFO">Clicks the element 'xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="1"]//button[contains(text(),"✏️")]'.</msg>
+<arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="${id}"]//button[contains(text(),"✏️")]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-22T12:41:53.916554" elapsed="0.289063"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-22T12:41:54.210631" level="INFO">${input_id} = editar-1-Tarefa_teste_3937</msg>
+<var>${input_id}</var>
+<arg>editar-${id}-${TAREFA.replace(" ", "_")}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-22T12:41:54.206615" elapsed="0.004016"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-04-22T12:41:54.244614" level="INFO">Waited for Element with selector id=editar-1-Tarefa_teste_3937 at state visible</msg>
+<arg>id=${input_id}</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-04-22T12:41:54.211626" elapsed="0.033995"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-22T12:41:54.249617" level="INFO">${nova_tarefa} = Tarefa teste 3937 editada</msg>
+<var>${nova_tarefa}</var>
+<arg>${TAREFA} editada</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-22T12:41:54.246615" elapsed="0.003002"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-04-22T12:41:54.253604" level="INFO">Fills the text 'Tarefa teste 3937 editada' in the given field.</msg>
+<arg>id=${input_id}</arg>
+<arg>${nova_tarefa}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-04-22T12:41:54.250604" elapsed="0.080012"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-04-22T12:41:54.335612" level="INFO">Clicks the element 'xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="1"]//button[contains(text(),"Salvar")]'.</msg>
+<arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="${id}"]//button[contains(text(),"Salvar")]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-22T12:41:54.332611" elapsed="0.151367"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-04-22T12:41:55.382657" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 3937 editada")] at state visible</msg>
+<arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${nova_tarefa}")]</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-04-22T12:41:54.483978" elapsed="0.899717"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-04-22T12:41:55.384691" level="INFO">${TAREFA} = Tarefa teste 3937 editada</msg>
+<arg>${TAREFA}</arg>
+<arg>${nova_tarefa}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-04-22T12:41:55.383695" elapsed="0.001995"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T12:41:55.386691" level="INFO">Tarefa "Tarefa teste 3937 editada" editada com sucesso!</msg>
+<arg>Tarefa "${TAREFA}" editada com sucesso!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T12:41:55.385690" elapsed="0.001969"/>
+</kw>
+<tag>Editando a tarefa</tag>
+<status status="PASS" start="2025-04-22T12:41:53.747624" elapsed="1.640035"/>
+</kw>
+<kw name="Validar tarefa editada" owner="tarefas">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-04-22T12:41:55.416076" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 3937 editada")] at state visible</msg>
+<arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-04-22T12:41:55.393661" elapsed="0.022415"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T12:41:55.418096" level="INFO">Validando se a tarefa "Tarefa teste 3937 editada" foi editada...</msg>
+<arg>Validando se a tarefa "${TAREFA}" foi editada...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T12:41:55.417099" elapsed="0.001962"/>
+</kw>
+<tag>Validando a edição da tarefa</tag>
+<status status="PASS" start="2025-04-22T12:41:55.390668" elapsed="0.028393"/>
+</kw>
+<kw name="Concluir tarefa" owner="tarefas">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T12:41:55.426059" level="INFO">Concluindo a tarefa "Tarefa teste 3937 editada"...</msg>
+<arg>Concluindo a tarefa "${TAREFA}"...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T12:41:55.424059" elapsed="0.002999"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-04-22T12:41:55.431063" level="INFO">Clicks the element 'xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 3937 editada")]//button[1]'.</msg>
+<arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]//button[1]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-22T12:41:55.428066" elapsed="0.066537"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-04-22T12:41:56.354984" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "Tarefa teste 3937 editada")] at state visible</msg>
+<arg>xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-04-22T12:41:55.495606" elapsed="0.860356"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T12:41:56.357958" level="INFO">Tarefa "Tarefa teste 3937 editada" concluída com sucesso!</msg>
+<arg>Tarefa "${TAREFA}" concluída com sucesso!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T12:41:56.356956" elapsed="0.001002"/>
+</kw>
+<tag>Concluindo a tarefa</tag>
+<status status="PASS" start="2025-04-22T12:41:55.421062" elapsed="0.936896"/>
+</kw>
+<kw name="Validar tarefa concluída" owner="tarefas">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-04-22T12:41:56.382675" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "Tarefa teste 3937 editada")] at state visible</msg>
+<arg>xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-04-22T12:41:56.361971" elapsed="0.021707"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T12:41:56.386908" level="INFO">Validando se a tarefa "Tarefa teste 3937 editada" foi concluída...</msg>
+<arg>Validando se a tarefa "${TAREFA}" foi concluída...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T12:41:56.384866" elapsed="0.002564"/>
+</kw>
+<tag>Validando a conclusão da tarefa</tag>
+<status status="PASS" start="2025-04-22T12:41:56.359954" elapsed="0.027476"/>
+</kw>
+<kw name="Excluir tarefa" owner="tarefas">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T12:41:56.393473" level="INFO">Excluindo a tarefa "Tarefa teste 3937 editada"...</msg>
+<arg>Excluindo a tarefa "${TAREFA}"...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T12:41:56.391461" elapsed="0.002012"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-04-22T12:41:56.442912" level="INFO">Clicks the element 'xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "Tarefa teste 3937 editada")]//button[contains(text(),"🗑️")]'.</msg>
+<arg>xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]//button[contains(text(),"🗑️")]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-04-22T12:41:56.394473" elapsed="0.119058"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-04-22T12:41:56.751052" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "Tarefa teste 3937 editada")] at state hidden</msg>
+<arg>xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]</arg>
+<arg>hidden</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-04-22T12:41:56.514512" elapsed="0.236540"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T12:41:56.752026" level="INFO">Tarefa "Tarefa teste 3937 editada" excluída com sucesso!</msg>
+<arg>Tarefa "${TAREFA}" excluída com sucesso!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T12:41:56.752026" elapsed="0.000998"/>
+</kw>
+<tag>Excluindo a tarefa</tag>
+<status status="PASS" start="2025-04-22T12:41:56.389458" elapsed="0.363566"/>
+</kw>
+<kw name="Fechar o navegador" owner="tarefas">
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-04-22T12:41:58.786938" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-22T12:41:56.755115" elapsed="2.031823"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Navegador fechado com sucesso!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-22T12:41:58.786938" elapsed="0.000990"/>
+</kw>
+<status status="PASS" start="2025-04-22T12:41:56.754089" elapsed="2.034842"/>
+</kw>
+<status status="PASS" start="2025-04-22T12:41:44.827371" elapsed="13.961560"/>
+</test>
+<status status="PASS" start="2025-04-22T12:41:43.698560" elapsed="15.144321"/>
+</suite>
+<status status="PASS" start="2025-04-22T12:41:43.690018" elapsed="15.209863"/>
+</suite>
+<status status="PASS" start="2025-04-22T12:41:39.647687" elapsed="19.254194"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="1" fail="0" skip="0">DELETE</stat>
@@ -261,7 +646,10 @@
 <stat pass="1" fail="0" skip="0">PUT</stat>
 </tag>
 <suite>
-<stat name="Api Tests" id="s1" pass="4" fail="0" skip="0">Api Tests</stat>
+<stat name="Tests" id="s1" pass="5" fail="0" skip="0">Tests</stat>
+<stat name="Api Tests" id="s1-s1" pass="4" fail="0" skip="0">Tests.Api Tests</stat>
+<stat name="Robot" id="s1-s2" pass="1" fail="0" skip="0">Tests.Robot</stat>
+<stat name="Tarefas" id="s1-s2-s1" pass="1" fail="0" skip="0">Tests.Robot.Tarefas</stat>
 </suite>
 </statistics>
 <errors>
