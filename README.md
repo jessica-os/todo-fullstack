@@ -81,3 +81,28 @@ git clone https://github.com/jessica-os/todo-fullstack.git
 cd todo-fullstack
 ```
 
+### 2. Rodar o frontend
+O frontend já está hospedado no GitHub Pages, mas se quiser rodar localmente:
+-   Abra o arquivo index.html no seu navegador.
+
+### 3. Rodar o backend
+Se preferir rodar o backend localmente:
+
+1.Crie um ambiente virtual:
+```bash
+python -m venv venv
+source venv/bin/activate  # Para Mac/Linux
+venv\Scripts\activate  # Para Windows
+```
+2.Instale as dependências:
+```bash
+pip install -r requirements.txt
+```
+3.Execute o servidor Flask:
+```bash
+python app.py
+``` 
+Agora, o backend estará disponível em http://localhost:5000.
+
+## 👩‍💻 Autoria
+Projeto desenvolvido por ***Jéssica Oliveira*** como prática de integração fullstack e deploy de aplicações com frontend e backend separados.
