@@ -1,254 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.2 on win32)" generated="2025-04-22T12:33:54.470932" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.2 on win32)" generated="2025-04-22T12:36:41.009209" rpa="false" schemaversion="5">
 <suite id="s1" name="Api Tests" source="C:\Users\User\Desktop\Todo-Fullstack\tests\api_tests.robot">
 <kw name="Disable SSL Warnings" type="SETUP">
 <kw name="Set Environment Variable" owner="OperatingSystem">
-<msg time="2025-04-22T12:33:56.020544" level="INFO">Environment variable 'PYTHONWARNINGS' set to value 'ignore::InsecureRequestWarning'.</msg>
+<msg time="2025-04-22T12:36:42.269759" level="INFO">Environment variable 'PYTHONWARNINGS' set to value 'ignore::InsecureRequestWarning'.</msg>
 <arg>PYTHONWARNINGS</arg>
 <arg>ignore::InsecureRequestWarning</arg>
 <doc>Sets an environment variable to a specified value.</doc>
-<status status="PASS" start="2025-04-22T12:33:56.020544" elapsed="0.000000"/>
+<status status="PASS" start="2025-04-22T12:36:42.269759" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-04-22T12:33:56.019542" elapsed="0.001002"/>
+<status status="PASS" start="2025-04-22T12:36:42.268759" elapsed="0.001000"/>
 </kw>
 <test id="s1-t1" name="Criar Tarefa" line="19">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:33:56.022542" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-04-22T12:36:42.271759" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>todo</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-04-22T12:33:56.021544" elapsed="0.000998"/>
+<status status="PASS" start="2025-04-22T12:36:42.270759" elapsed="0.001000"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-04-22T12:33:56.023529" level="INFO">${dados} = {'nome': 'Estudar Robot'}</msg>
+<msg time="2025-04-22T12:36:42.272759" level="INFO">${dados} = {'nome': 'Estudar Robot'}</msg>
 <var>${dados}</var>
 <arg>nome=Estudar Robot</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-04-22T12:33:56.022542" elapsed="0.000987"/>
+<status status="PASS" start="2025-04-22T12:36:42.271759" elapsed="0.001000"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:33:57.150577" level="INFO">POST Request : url=https://todo-fullstack-orju.onrender.com/tasks 
+<msg time="2025-04-22T12:36:42.615769" level="INFO">POST Request : url=https://todo-fullstack-orju.onrender.com/tasks 
  path_url=/tasks 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '25', 'Content-Type': 'application/json'} 
  body=b'{"nome": "Estudar Robot"}' 
  </msg>
-<msg time="2025-04-22T12:33:57.151591" level="INFO">POST Response : url=https://todo-fullstack-orju.onrender.com/tasks 
+<msg time="2025-04-22T12:36:42.615769" level="INFO">POST Response : url=https://todo-fullstack-orju.onrender.com/tasks 
  status=201, reason=Created 
- headers={'Date': 'Tue, 22 Apr 2025 15:33:57 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': '6b7ea55e-e4a4-47b9', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '93462eb26cb709d5-SJK', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={"concluida":false,"id":2,"nome":"Estudar Robot"}
+ headers={'Date': 'Tue, 22 Apr 2025 15:36:42 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': '1f314556-f9c7-46db', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '934632c16a1a09d7-SJK', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"concluida":false,"id":1,"nome":"Estudar Robot"}
  
  </msg>
-<msg time="2025-04-22T12:33:57.151591" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-04-22T12:36:42.615769" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-04-22T12:33:57.154616" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-04-22T12:36:42.616752" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>todo</arg>
 <arg>/tasks</arg>
 <arg>json=${dados}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-04-22T12:33:56.023529" elapsed="1.131087"/>
+<status status="PASS" start="2025-04-22T12:36:42.272759" elapsed="0.343993"/>
 </kw>
 <kw name="Convert To Dictionary" owner="Collections">
-<msg time="2025-04-22T12:33:57.157612" level="INFO">${task} = {'concluida': False, 'id': 2, 'nome': 'Estudar Robot'}</msg>
+<msg time="2025-04-22T12:36:42.617767" level="INFO">${task} = {'concluida': False, 'id': 1, 'nome': 'Estudar Robot'}</msg>
 <var>${task}</var>
 <arg>${response.json()}</arg>
 <doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
-<status status="PASS" start="2025-04-22T12:33:57.155574" elapsed="0.002038"/>
+<status status="PASS" start="2025-04-22T12:36:42.616752" elapsed="0.001015"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2025-04-22T12:33:57.159613" level="INFO">${task_id} = 2</msg>
+<msg time="2025-04-22T12:36:42.618767" level="INFO">${task_id} = 1</msg>
 <var>${task_id}</var>
 <arg>${task}</arg>
 <arg>id</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2025-04-22T12:33:57.158613" elapsed="0.001000"/>
+<status status="PASS" start="2025-04-22T12:36:42.618767" elapsed="0.000000"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-04-22T12:33:57.161614" level="INFO">${task_id} = 2</msg>
+<msg time="2025-04-22T12:36:42.619767" level="INFO">${task_id} = 1</msg>
 <arg>${task_id}</arg>
 <arg>${task_id}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-04-22T12:33:57.160587" elapsed="0.002027"/>
+<status status="PASS" start="2025-04-22T12:36:42.618767" elapsed="0.001000"/>
 </kw>
 <tag>POST</tag>
-<status status="PASS" start="2025-04-22T12:33:56.021544" elapsed="1.142045"/>
+<status status="PASS" start="2025-04-22T12:36:42.270759" elapsed="0.349008"/>
 </test>
 <test id="s1-t2" name="Concluir Tarefa" line="28">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:33:57.171229" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-04-22T12:36:42.621753" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>todo</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-04-22T12:33:57.171229" elapsed="0.001034"/>
+<status status="PASS" start="2025-04-22T12:36:42.621753" elapsed="0.000000"/>
 </kw>
 <kw name="PATCH On Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:33:58.074027" level="INFO">PATCH Request : url=https://todo-fullstack-orju.onrender.com/tasks/2/concluir 
- path_url=/tasks/2/concluir 
+<msg time="2025-04-22T12:36:42.923462" level="INFO">PATCH Request : url=https://todo-fullstack-orju.onrender.com/tasks/1/concluir 
+ path_url=/tasks/1/concluir 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2025-04-22T12:33:58.074027" level="INFO">PATCH Response : url=https://todo-fullstack-orju.onrender.com/tasks/2/concluir 
+<msg time="2025-04-22T12:36:42.923462" level="INFO">PATCH Response : url=https://todo-fullstack-orju.onrender.com/tasks/1/concluir 
  status=200, reason=OK 
- headers={'Date': 'Tue, 22 Apr 2025 15:33:58 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': '62793aee-35f5-44c2', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '93462eb9f89809d5-SJK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={"concluida":true,"id":2,"nome":"Estudar Robot"}
+ headers={'Date': 'Tue, 22 Apr 2025 15:36:43 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': '2c1fe783-7a7e-49f2', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '934632c3890309d5-SJK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"concluida":true,"id":1,"nome":"Estudar Robot"}
  
  </msg>
-<msg time="2025-04-22T12:33:58.074027" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-04-22T12:36:42.923462" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-04-22T12:33:58.075056" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-04-22T12:36:42.924439" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>todo</arg>
 <arg>/tasks/${task_id}/concluir</arg>
 <doc>Sends a PATCH request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-04-22T12:33:57.173264" elapsed="0.901792"/>
+<status status="PASS" start="2025-04-22T12:36:42.622768" elapsed="0.301671"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-22T12:33:58.077039" level="INFO">{'concluida': True, 'id': 2, 'nome': 'Estudar Robot'}</msg>
+<msg time="2025-04-22T12:36:42.926459" level="INFO">{'concluida': True, 'id': 1, 'nome': 'Estudar Robot'}</msg>
 <arg>${response.json()}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-22T12:33:58.076058" elapsed="0.000981"/>
+<status status="PASS" start="2025-04-22T12:36:42.925442" elapsed="0.001017"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <arg>${response}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-04-22T12:33:58.078046" elapsed="0.001011"/>
+<status status="PASS" start="2025-04-22T12:36:42.927460" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To Dictionary" owner="Collections">
-<msg time="2025-04-22T12:33:58.081056" level="INFO">${task} = {'concluida': True, 'id': 2, 'nome': 'Estudar Robot'}</msg>
+<msg time="2025-04-22T12:36:42.929459" level="INFO">${task} = {'concluida': True, 'id': 1, 'nome': 'Estudar Robot'}</msg>
 <var>${task}</var>
 <arg>${response.json()}</arg>
 <doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
-<status status="PASS" start="2025-04-22T12:33:58.079057" elapsed="0.001999"/>
+<status status="PASS" start="2025-04-22T12:36:42.928459" elapsed="0.001000"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
-<msg time="2025-04-22T12:33:58.083030" level="INFO">Argument types are:
+<msg time="2025-04-22T12:36:42.930459" level="INFO">Argument types are:
 &lt;class 'bool'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${task['concluida']}</arg>
 <arg>True</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-04-22T12:33:58.081056" elapsed="0.001974"/>
+<status status="PASS" start="2025-04-22T12:36:42.929459" elapsed="0.001000"/>
 </kw>
 <tag>PATCH</tag>
-<status status="PASS" start="2025-04-22T12:33:57.167578" elapsed="0.916478"/>
+<status status="PASS" start="2025-04-22T12:36:42.620771" elapsed="0.310693"/>
 </test>
 <test id="s1-t3" name="Atualizar Tarefa" line="37">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:33:58.086703" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-04-22T12:36:42.934437" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>todo</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-04-22T12:33:58.086703" elapsed="0.001029"/>
+<status status="PASS" start="2025-04-22T12:36:42.934437" elapsed="0.001006"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-04-22T12:33:58.088146" level="INFO">${novos_dados} = {'nome': 'Estudar Playwright'}</msg>
+<msg time="2025-04-22T12:36:42.936443" level="INFO">${novos_dados} = {'nome': 'Estudar Playwright'}</msg>
 <var>${novos_dados}</var>
 <arg>nome=Estudar Playwright</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-04-22T12:33:58.088146" elapsed="0.000000"/>
+<status status="PASS" start="2025-04-22T12:36:42.935443" elapsed="0.001000"/>
 </kw>
 <kw name="PUT On Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:33:58.780221" level="INFO">PUT Request : url=https://todo-fullstack-orju.onrender.com/tasks/2 
- path_url=/tasks/2 
+<msg time="2025-04-22T12:36:43.332937" level="INFO">PUT Request : url=https://todo-fullstack-orju.onrender.com/tasks/1 
+ path_url=/tasks/1 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '30', 'Content-Type': 'application/json'} 
  body=b'{"nome": "Estudar Playwright"}' 
  </msg>
-<msg time="2025-04-22T12:33:58.781214" level="INFO">PUT Response : url=https://todo-fullstack-orju.onrender.com/tasks/2 
+<msg time="2025-04-22T12:36:43.332937" level="INFO">PUT Response : url=https://todo-fullstack-orju.onrender.com/tasks/1 
  status=200, reason=OK 
- headers={'Date': 'Tue, 22 Apr 2025 15:33:58 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': '8fd82848-1742-4600', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '93462ebf7e9a09d1-SJK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={"concluida":true,"id":2,"nome":"Estudar Playwright"}
+ headers={'Date': 'Tue, 22 Apr 2025 15:36:43 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': 'b597acef-fd59-4ee3', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '934632c5bb3009d3-SJK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"concluida":true,"id":1,"nome":"Estudar Playwright"}
  
  </msg>
-<msg time="2025-04-22T12:33:58.782222" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-04-22T12:36:43.332937" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-04-22T12:33:58.789228" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-04-22T12:36:43.333952" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>todo</arg>
 <arg>/tasks/${task_id}</arg>
 <arg>json=${novos_dados}</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-04-22T12:33:58.089214" elapsed="0.700014"/>
+<status status="PASS" start="2025-04-22T12:36:42.936443" elapsed="0.397509"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-22T12:33:58.792216" level="INFO">{'concluida': True, 'id': 2, 'nome': 'Estudar Playwright'}</msg>
+<msg time="2025-04-22T12:36:43.335937" level="INFO">{'concluida': True, 'id': 1, 'nome': 'Estudar Playwright'}</msg>
 <arg>${response.json()}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-22T12:33:58.790214" elapsed="0.002002"/>
+<status status="PASS" start="2025-04-22T12:36:43.334880" elapsed="0.001057"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <arg>${response}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-04-22T12:33:58.793214" elapsed="0.002014"/>
+<status status="PASS" start="2025-04-22T12:36:43.336943" elapsed="0.000966"/>
 </kw>
 <kw name="Convert To Dictionary" owner="Collections">
-<msg time="2025-04-22T12:33:58.801218" level="INFO">${task} = {'concluida': True, 'id': 2, 'nome': 'Estudar Playwright'}</msg>
+<msg time="2025-04-22T12:36:43.339569" level="INFO">${task} = {'concluida': True, 'id': 1, 'nome': 'Estudar Playwright'}</msg>
 <var>${task}</var>
 <arg>${response.json()}</arg>
 <doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
-<status status="PASS" start="2025-04-22T12:33:58.797222" elapsed="0.003996"/>
+<status status="PASS" start="2025-04-22T12:36:43.338541" elapsed="0.001028"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${task['nome']}</arg>
 <arg>Estudar Playwright</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-04-22T12:33:58.803559" elapsed="0.003223"/>
+<status status="PASS" start="2025-04-22T12:36:43.340433" elapsed="0.001029"/>
 </kw>
 <tag>PUT</tag>
-<status status="PASS" start="2025-04-22T12:33:58.086056" elapsed="0.723722"/>
+<status status="PASS" start="2025-04-22T12:36:42.933459" elapsed="0.409001"/>
 </test>
 <test id="s1-t4" name="Deletar Tarefa" line="47">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:33:58.815773" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-04-22T12:36:43.345460" level="INFO">Creating Session using : alias=todo, url=https://todo-fullstack-orju.onrender.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>todo</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-04-22T12:33:58.814774" elapsed="0.002008"/>
+<status status="PASS" start="2025-04-22T12:36:43.344473" elapsed="0.000987"/>
 </kw>
 <kw name="DELETE On Session" owner="RequestsLibrary">
-<msg time="2025-04-22T12:33:59.903850" level="INFO">DELETE Request : url=https://todo-fullstack-orju.onrender.com/tasks/2 
- path_url=/tasks/2 
+<msg time="2025-04-22T12:36:43.742264" level="INFO">DELETE Request : url=https://todo-fullstack-orju.onrender.com/tasks/1 
+ path_url=/tasks/1 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2025-04-22T12:33:59.904847" level="INFO">DELETE Response : url=https://todo-fullstack-orju.onrender.com/tasks/2 
+<msg time="2025-04-22T12:36:43.743263" level="INFO">DELETE Response : url=https://todo-fullstack-orju.onrender.com/tasks/1 
  status=200, reason=OK 
- headers={'Date': 'Tue, 22 Apr 2025 15:34:00 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': 'c73bfa35-b490-4842', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '93462ec47ea909d9-SJK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Tue, 22 Apr 2025 15:36:43 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'rndr-id': '38edbbe7-eaac-4fcd', 'vary': 'Accept-Encoding', 'x-render-origin-server': 'Werkzeug/3.1.3 Python/3.11.11', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '934632c85dba09d7-SJK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"mensagem":"Tarefa exclu\u00edda com sucesso"}
  
  </msg>
-<msg time="2025-04-22T12:33:59.904847" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-04-22T12:36:43.743263" level="INFO">C:\Python312\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'todo-fullstack-orju.onrender.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-04-22T12:33:59.906832" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-04-22T12:36:43.744288" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>todo</arg>
 <arg>/tasks/${task_id}</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-04-22T12:33:58.817773" elapsed="1.089059"/>
+<status status="PASS" start="2025-04-22T12:36:43.346460" elapsed="0.397828"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-22T12:33:59.908830" level="INFO">{'mensagem': 'Tarefa excluída com sucesso'}</msg>
+<msg time="2025-04-22T12:36:43.747259" level="INFO">{'mensagem': 'Tarefa excluída com sucesso'}</msg>
 <arg>${response.json()}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-22T12:33:59.907833" elapsed="0.000997"/>
+<status status="PASS" start="2025-04-22T12:36:43.745271" elapsed="0.001988"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <arg>${response}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-04-22T12:33:59.909838" elapsed="0.000995"/>
+<status status="PASS" start="2025-04-22T12:36:43.748260" elapsed="0.001001"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${response.json()}[mensagem]</arg>
 <arg>Tarefa excluída com sucesso</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-04-22T12:33:59.910833" elapsed="0.001996"/>
+<status status="PASS" start="2025-04-22T12:36:43.749261" elapsed="0.002002"/>
 </kw>
 <tag>DELETE</tag>
-<status status="PASS" start="2025-04-22T12:33:58.812771" elapsed="1.101080"/>
+<status status="PASS" start="2025-04-22T12:36:43.343490" elapsed="0.408770"/>
 </test>
-<status status="PASS" start="2025-04-22T12:33:54.476933" elapsed="5.440905"/>
+<status status="PASS" start="2025-04-22T12:36:41.015209" elapsed="2.740039"/>
 </suite>
 <statistics>
 <total>

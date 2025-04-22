@@ -1,6 +1,6 @@
 
 *** Settings ***
-Resource    resources/tarefas.resource
+Resource    ../resources/tarefas.resource
 Library    Collections
 Library    BuiltIn
 Library    OperatingSystem
