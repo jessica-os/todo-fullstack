@@ -18,8 +18,8 @@ Uma aplicação simples de lista de tarefas (To-do List), desenvolvida com **fro
 
 Aqui está um gif demonstrando como a aplicação funciona:
 
-  <img src="../assets/todo-list.gif" alt="">
-  <img src="../assets/todo-list-responsive.gif" alt="">
+<img src="/assets/todo-list.gif" alt="" width="400" height="auto">
+<img src="/assets/todo-list-responsive.gif" alt="" width="400" height="auto">
 
 ---
 
