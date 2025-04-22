@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.2 on win32)" generated="2025-04-17T17:25:44.908974" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.2 on win32)" generated="2025-04-22T10:54:56.840914" rpa="false" schemaversion="5">
 <suite id="s1" name="Tests" source="C:\Users\User\Desktop\Todo-Fullstack\tests">
 <suite id="s1-s1" name="Robot" source="C:\Users\User\Desktop\Todo-Fullstack\tests\robot">
 <suite id="s1-s1-s1" name="Tarefas" source="C:\Users\User\Desktop\Todo-Fullstack\tests\robot\tarefas.robot">
-<test id="s1-s1-s1-t1" name="Fluxo Completo da Tarefa" line="13">
+<test id="s1-s1-s1-t1" name="Fluxo Completo da Tarefa" line="10">
 <kw name="Abrir o navegador" owner="tarefas">
 <kw name="New Browser" owner="Browser">
-<msg time="2025-04-17T17:25:45.418277" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\User\\Desktop\\Todo-Fullstack\\resultados\\browser\\traces\\temp\\5f3dd8d4-3fd8-4796-a3e7-1aa2794cb9e6"}</msg>
-<msg time="2025-04-17T17:25:45.480961" level="INFO">Starting Browser process C:\Python312\Lib\site-packages\Browser\wrapper\index.js using port 58059</msg>
-<msg time="2025-04-17T17:25:45.480961" level="INFO">Node startup parameters: ['node', 'C:\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js', '58059']</msg>
-<msg time="2025-04-17T17:25:48.012252" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\User\\Desktop\\Todo-Fullstack\\resultados\\browser\\traces\\temp\\5f3dd8d4-3fd8-4796-a3e7-1aa2794cb9e6"}</msg>
+<msg time="2025-04-22T10:54:57.387865" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\User\\Desktop\\Todo-Fullstack\\resultados\\browser\\traces\\temp\\fa5c4279-9db8-4eae-bdff-a4ad5dea1efa"}</msg>
+<msg time="2025-04-22T10:54:57.444901" level="INFO">Starting Browser process C:\Python312\Lib\site-packages\Browser\wrapper\index.js using port 61569</msg>
+<msg time="2025-04-22T10:54:57.444901" level="INFO">Node startup parameters: ['node', 'C:\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js', '61569']</msg>
+<msg time="2025-04-22T10:54:59.665383" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\User\\Desktop\\Todo-Fullstack\\resultados\\browser\\traces\\temp\\fa5c4279-9db8-4eae-bdff-a4ad5dea1efa"}</msg>
 <arg>headless=${False}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2025-04-17T17:25:45.416256" elapsed="2.595996"/>
+<status status="PASS" start="2025-04-22T10:54:57.385871" elapsed="2.280509"/>
 </kw>
 <kw name="New Context" owner="Browser">
-<msg time="2025-04-17T17:25:48.017257" level="INFO">{
+<msg time="2025-04-22T10:54:59.671380" level="INFO">{
   "acceptDownloads": true,
   "bypassCSP": false,
   "forcedColors": "none",
@@ -27,147 +27,147 @@
   "reducedMotion": "no-preference",
   "serviceWorkers": "allow",
   "viewport": {
-    "height": 720,
-    "width": 1280
+    "width": 1280,
+    "height": 720
   }
 }</msg>
-<msg time="2025-04-17T17:25:48.101265" level="INFO">Successfully created context. </msg>
-<msg time="2025-04-17T17:25:48.101265" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<msg time="2025-04-22T10:54:59.725084" level="INFO">Successfully created context. </msg>
+<msg time="2025-04-22T10:54:59.726081" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new BrowserContext with specified options.</doc>
-<status status="PASS" start="2025-04-17T17:25:48.013252" elapsed="0.089008"/>
+<status status="PASS" start="2025-04-22T10:54:59.667379" elapsed="0.058702"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Abrindo o navegador...</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-17T17:25:48.103260" elapsed="0.021002"/>
+<status status="PASS" start="2025-04-22T10:54:59.726081" elapsed="0.006003"/>
 </kw>
-<status status="PASS" start="2025-04-17T17:25:45.411258" elapsed="2.713004"/>
+<status status="PASS" start="2025-04-22T10:54:57.381881" elapsed="2.351200"/>
 </kw>
 <kw name="Abrir a página todo-list" owner="tarefas">
 <kw name="New Page" owner="Browser">
-<msg time="2025-04-17T17:25:49.927735" level="INFO">Successfully initialized new page object and opened url: https://jessica-os.github.io/todo-fullstack/</msg>
+<msg time="2025-04-22T10:55:01.308139" level="INFO">Successfully initialized new page object and opened url: https://jessica-os.github.io/todo-fullstack/</msg>
 <arg>${URL}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2025-04-17T17:25:48.126265" elapsed="1.802471"/>
+<status status="PASS" start="2025-04-22T10:54:59.764084" elapsed="1.544055"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-04-17T17:25:50.026042" level="INFO">Waited for Element with selector h1 at state visible</msg>
+<msg time="2025-04-22T10:55:01.382236" level="INFO">Waited for Element with selector h1 at state visible</msg>
 <arg>h1</arg>
 <arg>visible</arg>
 <arg>timeout=5s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-04-17T17:25:49.928736" elapsed="0.098303"/>
+<status status="PASS" start="2025-04-22T10:55:01.309686" elapsed="0.072550"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Página carregada com sucesso!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-17T17:25:50.027039" elapsed="0.001002"/>
+<status status="PASS" start="2025-04-22T10:55:01.382236" elapsed="0.001004"/>
 </kw>
-<status status="PASS" start="2025-04-17T17:25:48.125263" elapsed="1.903775"/>
+<status status="PASS" start="2025-04-22T10:54:59.762084" elapsed="1.621156"/>
 </kw>
 <kw name="Criar tarefa única" owner="tarefas">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-04-17T17:25:50.032040" level="INFO">${rand} = 6967</msg>
+<msg time="2025-04-22T10:55:01.385240" level="INFO">${rand} = 8594</msg>
 <var>${rand}</var>
 <arg>random.randint(1000, 9999)</arg>
 <arg>modules=random</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-04-17T17:25:50.031040" elapsed="0.001000"/>
+<status status="PASS" start="2025-04-22T10:55:01.384236" elapsed="0.001004"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-04-17T17:25:50.035044" level="INFO">${tarefa} = Tarefa teste 6967</msg>
+<msg time="2025-04-22T10:55:01.386233" level="INFO">${tarefa} = Tarefa teste 8594</msg>
 <var>${tarefa}</var>
 <arg>Tarefa teste ${rand}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-04-17T17:25:50.032040" elapsed="0.003004"/>
+<status status="PASS" start="2025-04-22T10:55:01.385240" elapsed="0.000993"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-04-17T17:25:50.037045" level="INFO">Fills the text 'Tarefa teste 6967' in the given field.</msg>
+<msg time="2025-04-22T10:55:01.388236" level="INFO">Fills the text 'Tarefa teste 8594' in the given field.</msg>
 <arg>xpath=//input[@id="nova-tarefa"]</arg>
 <arg>${tarefa}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-04-17T17:25:50.035044" elapsed="0.047994"/>
+<status status="PASS" start="2025-04-22T10:55:01.387238" elapsed="0.039184"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-04-17T17:25:50.087040" level="INFO">Clicks the element 'xpath=//button[@id="adicionar-tarefa"]'.</msg>
+<msg time="2025-04-22T10:55:01.428422" level="INFO">Clicks the element 'xpath=//button[@id="adicionar-tarefa"]'.</msg>
 <arg>xpath=//button[@id="adicionar-tarefa"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-04-17T17:25:50.085038" elapsed="0.106624"/>
+<status status="PASS" start="2025-04-22T10:55:01.427430" elapsed="0.090958"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-04-17T17:25:51.042708" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 6967")] at state visible</msg>
+<msg time="2025-04-22T10:55:02.881808" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 8594")] at state visible</msg>
 <arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${tarefa}")]</arg>
 <arg>visible</arg>
 <arg>timeout=5s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-04-17T17:25:50.192666" elapsed="0.850042"/>
+<status status="PASS" start="2025-04-22T10:55:01.519387" elapsed="1.362421"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-04-17T17:25:51.043708" level="INFO">${TAREFA} = Tarefa teste 6967</msg>
+<msg time="2025-04-22T10:55:02.882810" level="INFO">${TAREFA} = Tarefa teste 8594</msg>
 <arg>${TAREFA}</arg>
 <arg>${tarefa}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.042708" elapsed="0.001000"/>
+<status status="PASS" start="2025-04-22T10:55:02.881808" elapsed="0.001002"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-17T17:25:51.044726" level="INFO">Tarefa "Tarefa teste 6967" criada com sucesso!</msg>
+<msg time="2025-04-22T10:55:02.883813" level="INFO">Tarefa "Tarefa teste 8594" criada com sucesso!</msg>
 <arg>Tarefa "${tarefa}" criada com sucesso!</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.043708" elapsed="0.001018"/>
+<status status="PASS" start="2025-04-22T10:55:02.883813" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-04-17T17:25:50.030037" elapsed="1.014689"/>
+<status status="PASS" start="2025-04-22T10:55:01.383240" elapsed="1.501568"/>
 </kw>
 <kw name="Validar tarefa pendente" owner="tarefas">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-04-17T17:25:51.058708" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 6967")] at state visible</msg>
+<msg time="2025-04-22T10:55:02.898829" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 8594")] at state visible</msg>
 <arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]</arg>
 <arg>visible</arg>
 <arg>timeout=5s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.045710" elapsed="0.012998"/>
+<status status="PASS" start="2025-04-22T10:55:02.885809" elapsed="0.014025"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-17T17:25:51.059715" level="INFO">Validando se a tarefa "Tarefa teste 6967" está pendente...</msg>
-<arg>Validando se a tarefa "${TAREFA}" está pendente...</arg>
+<msg time="2025-04-22T10:55:02.899834" level="INFO">Validando tarefa pendente "Tarefa teste 8594"...</msg>
+<arg>Validando tarefa pendente "${TAREFA}"...</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.059715" elapsed="0.000000"/>
+<status status="PASS" start="2025-04-22T10:55:02.899834" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-04-17T17:25:51.045710" elapsed="0.015021"/>
+<status status="PASS" start="2025-04-22T10:55:02.884808" elapsed="0.016027"/>
 </kw>
 <kw name="Editar tarefa" owner="tarefas">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-17T17:25:51.062000" level="INFO">Editando a tarefa "Tarefa teste 6967"...</msg>
+<msg time="2025-04-22T10:55:02.901835" level="INFO">Editando a tarefa "Tarefa teste 8594"...</msg>
 <arg>Editando a tarefa "${TAREFA}"...</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.060982" elapsed="0.001018"/>
+<status status="PASS" start="2025-04-22T10:55:02.901835" elapsed="0.000000"/>
 </kw>
 <kw name="Get Element" owner="Browser">
-<msg time="2025-04-17T17:25:51.073002" level="INFO">Locator found successfully.</msg>
-<msg time="2025-04-17T17:25:51.074002" level="INFO">${element} = xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 6967")]</msg>
+<msg time="2025-04-22T10:55:02.915404" level="INFO">Locator found successfully.</msg>
+<msg time="2025-04-22T10:55:02.915503" level="INFO">${element} = xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 8594")]</msg>
 <var>${element}</var>
 <arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]</arg>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
-<status status="PASS" start="2025-04-17T17:25:51.062000" elapsed="0.012002"/>
+<status status="PASS" start="2025-04-22T10:55:02.901835" elapsed="0.013668"/>
 </kw>
 <kw name="Get Attribute" owner="Browser">
-<msg time="2025-04-17T17:25:51.108266" level="INFO">Attribute is: '1'</msg>
-<msg time="2025-04-17T17:25:51.108266" level="INFO">${id} = 1</msg>
+<msg time="2025-04-22T10:55:02.950404" level="INFO">Attribute is: '1'</msg>
+<msg time="2025-04-22T10:55:02.951405" level="INFO">${id} = 1</msg>
 <var>${id}</var>
 <arg>${element}</arg>
 <arg>data-id</arg>
@@ -175,189 +175,208 @@
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.074002" elapsed="0.035253"/>
+<status status="PASS" start="2025-04-22T10:55:02.916054" elapsed="0.035351"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-04-17T17:25:51.110279" level="INFO">Clicks the element 'xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="1"]//button[contains(text(),"✏️")]'.</msg>
+<msg time="2025-04-22T10:55:02.958402" level="INFO">Clicks the element 'xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="1"]//button[contains(text(),"✏️")]'.</msg>
 <arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="${id}"]//button[contains(text(),"✏️")]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.109255" elapsed="0.062004"/>
+<status status="PASS" start="2025-04-22T10:55:02.951405" elapsed="0.074462"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-04-17T17:25:51.173255" level="INFO">${input_id} = editar-1-Tarefa_teste_6967</msg>
+<msg time="2025-04-22T10:55:03.027867" level="INFO">${input_id} = editar-1-Tarefa_teste_8594</msg>
 <var>${input_id}</var>
 <arg>editar-${id}-${TAREFA.replace(" ", "_")}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.171259" elapsed="0.001996"/>
+<status status="PASS" start="2025-04-22T10:55:03.026857" elapsed="0.001010"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-04-17T17:25:51.190258" level="INFO">Waited for Element with selector id=editar-1-Tarefa_teste_6967 at state visible</msg>
+<msg time="2025-04-22T10:55:03.044138" level="INFO">Waited for Element with selector id=editar-1-Tarefa_teste_8594 at state visible</msg>
 <arg>id=${input_id}</arg>
 <arg>visible</arg>
 <arg>timeout=5s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.173255" elapsed="0.017003"/>
+<status status="PASS" start="2025-04-22T10:55:03.029884" elapsed="0.014254"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-04-17T17:25:51.191257" level="INFO">${nova_tarefa} = Tarefa teste 6967 editada</msg>
+<msg time="2025-04-22T10:55:03.045138" level="INFO">${nova_tarefa} = Tarefa teste 8594 editada</msg>
 <var>${nova_tarefa}</var>
 <arg>${TAREFA} editada</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.190258" elapsed="0.000999"/>
+<status status="PASS" start="2025-04-22T10:55:03.044138" elapsed="0.001000"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-04-17T17:25:51.192252" level="INFO">Fills the text 'Tarefa teste 6967 editada' in the given field.</msg>
+<msg time="2025-04-22T10:55:03.046138" level="INFO">Fills the text 'Tarefa teste 8594 editada' in the given field.</msg>
 <arg>id=${input_id}</arg>
 <arg>${nova_tarefa}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.191257" elapsed="0.032002"/>
+<status status="PASS" start="2025-04-22T10:55:03.045138" elapsed="0.022001"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-04-17T17:25:51.226256" level="INFO">Clicks the element 'xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="1"]//button[contains(text(),"Salvar")]'.</msg>
+<msg time="2025-04-22T10:55:03.070141" level="INFO">Clicks the element 'xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="1"]//button[contains(text(),"Salvar")]'.</msg>
 <arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[@data-id="${id}"]//button[contains(text(),"Salvar")]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.224261" elapsed="0.064078"/>
+<status status="PASS" start="2025-04-22T10:55:03.068142" elapsed="0.091418"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-04-17T17:25:52.127826" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 6967 editada")] at state visible</msg>
+<msg time="2025-04-22T10:55:04.002049" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 8594 editada")] at state visible</msg>
 <arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${nova_tarefa}")]</arg>
 <arg>visible</arg>
 <arg>timeout=5s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-04-17T17:25:51.288339" elapsed="0.839487"/>
+<status status="PASS" start="2025-04-22T10:55:03.160559" elapsed="0.842490"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-04-17T17:25:52.128808" level="INFO">${TAREFA} = Tarefa teste 6967 editada</msg>
+<msg time="2025-04-22T10:55:04.004252" level="INFO">${TAREFA} = Tarefa teste 8594 editada</msg>
 <arg>${TAREFA}</arg>
 <arg>${nova_tarefa}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-04-17T17:25:52.127826" elapsed="0.000982"/>
+<status status="PASS" start="2025-04-22T10:55:04.003691" elapsed="0.001072"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-17T17:25:52.129806" level="INFO">Tarefa "Tarefa teste 6967 editada" editada com sucesso!</msg>
+<msg time="2025-04-22T10:55:04.005372" level="INFO">Tarefa "Tarefa teste 8594 editada" editada com sucesso!</msg>
 <arg>Tarefa "${TAREFA}" editada com sucesso!</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-17T17:25:52.128808" elapsed="0.000998"/>
+<status status="PASS" start="2025-04-22T10:55:04.004817" elapsed="0.001087"/>
 </kw>
-<status status="PASS" start="2025-04-17T17:25:51.060982" elapsed="1.068824"/>
+<status status="PASS" start="2025-04-22T10:55:02.900835" elapsed="1.105069"/>
+</kw>
+<kw name="Validar tarefa editada" owner="tarefas">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-04-22T10:55:04.019167" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 8594 editada")] at state visible</msg>
+<arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-04-22T10:55:04.007667" elapsed="0.011500"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T10:55:04.020446" level="INFO">Validando se a tarefa "Tarefa teste 8594 editada" foi editada...</msg>
+<arg>Validando se a tarefa "${TAREFA}" foi editada...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T10:55:04.019734" elapsed="0.000712"/>
+</kw>
+<status status="PASS" start="2025-04-22T10:55:04.006483" elapsed="0.014529"/>
 </kw>
 <kw name="Concluir tarefa" owner="tarefas">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-17T17:25:52.130820" level="INFO">Concluindo a tarefa "Tarefa teste 6967 editada"...</msg>
+<msg time="2025-04-22T10:55:04.023278" level="INFO">Concluindo a tarefa "Tarefa teste 8594 editada"...</msg>
 <arg>Concluindo a tarefa "${TAREFA}"...</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-17T17:25:52.130820" elapsed="0.000000"/>
+<status status="PASS" start="2025-04-22T10:55:04.022155" elapsed="0.001123"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-04-17T17:25:52.131821" level="INFO">Clicks the element 'xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 6967 editada")]//button[1]'.</msg>
+<msg time="2025-04-22T10:55:04.024246" level="INFO">Clicks the element 'xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "Tarefa teste 8594 editada")]//button[1]'.</msg>
 <arg>xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]//button[1]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-04-17T17:25:52.131821" elapsed="0.033984"/>
+<status status="PASS" start="2025-04-22T10:55:04.023278" elapsed="0.043950"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-04-17T17:25:53.016389" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "Tarefa teste 6967 editada")] at state visible</msg>
+<msg time="2025-04-22T10:55:04.897194" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "Tarefa teste 8594 editada")] at state visible</msg>
 <arg>xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]</arg>
 <arg>visible</arg>
 <arg>timeout=5s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-04-17T17:25:52.166806" elapsed="0.850583"/>
+<status status="PASS" start="2025-04-22T10:55:04.067958" elapsed="0.830217"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-17T17:25:53.018389" level="INFO">Tarefa "Tarefa teste 6967 editada" concluída com sucesso!</msg>
+<msg time="2025-04-22T10:55:04.899176" level="INFO">Tarefa "Tarefa teste 8594 editada" concluída com sucesso!</msg>
 <arg>Tarefa "${TAREFA}" concluída com sucesso!</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-17T17:25:53.017389" elapsed="0.001000"/>
+<status status="PASS" start="2025-04-22T10:55:04.898175" elapsed="0.001001"/>
 </kw>
-<status status="PASS" start="2025-04-17T17:25:52.129806" elapsed="0.888583"/>
+<status status="PASS" start="2025-04-22T10:55:04.021567" elapsed="0.877609"/>
 </kw>
-<kw name="Validar tarefa concluida" owner="tarefas">
+<kw name="Validar tarefa concluída" owner="tarefas">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-04-17T17:25:53.037393" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "Tarefa teste 6967 editada")] at state visible</msg>
+<msg time="2025-04-22T10:55:04.909197" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "Tarefa teste 8594 editada")] at state visible</msg>
 <arg>xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]</arg>
 <arg>visible</arg>
 <arg>timeout=5s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-04-17T17:25:53.020390" elapsed="0.017003"/>
+<status status="PASS" start="2025-04-22T10:55:04.900195" elapsed="0.009002"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-17T17:25:53.038401" level="INFO">Validando se a tarefa "Tarefa teste 6967 editada" está concluída...</msg>
-<arg>Validando se a tarefa "${TAREFA}" está concluída...</arg>
+<msg time="2025-04-22T10:55:04.910184" level="INFO">Validando se a tarefa "Tarefa teste 8594 editada" foi concluída...</msg>
+<arg>Validando se a tarefa "${TAREFA}" foi concluída...</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-17T17:25:53.038401" elapsed="0.000995"/>
+<status status="PASS" start="2025-04-22T10:55:04.910184" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-04-17T17:25:53.019391" elapsed="0.020005"/>
+<status status="PASS" start="2025-04-22T10:55:04.899176" elapsed="0.011008"/>
 </kw>
 <kw name="Excluir tarefa" owner="tarefas">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-17T17:25:53.044396" level="INFO">Excluindo a tarefa "Tarefa teste 6967 editada"...</msg>
+<msg time="2025-04-22T10:55:04.912183" level="INFO">Excluindo a tarefa "Tarefa teste 8594 editada"...</msg>
 <arg>Excluindo a tarefa "${TAREFA}"...</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-17T17:25:53.043392" elapsed="0.001004"/>
+<status status="PASS" start="2025-04-22T10:55:04.911204" elapsed="0.000979"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-04-17T17:25:53.046393" level="INFO">Clicks the element 'xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "Tarefa teste 6967 editada")]//button[contains(text(),"🗑️")]'.</msg>
+<msg time="2025-04-22T10:55:04.920269" level="INFO">Clicks the element 'xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "Tarefa teste 8594 editada")]//button[contains(text(),"🗑️")]'.</msg>
 <arg>xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]//button[contains(text(),"🗑️")]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-04-17T17:25:53.045396" elapsed="0.039002"/>
+<status status="PASS" start="2025-04-22T10:55:04.912183" elapsed="0.039243"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-04-17T17:25:53.309398" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "Tarefa teste 6967 editada")] at state hidden</msg>
+<msg time="2025-04-22T10:55:05.181285" level="INFO">Waited for Element with selector xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "Tarefa teste 8594 editada")] at state hidden</msg>
 <arg>xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]</arg>
 <arg>hidden</arg>
 <arg>timeout=5s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-04-17T17:25:53.085392" elapsed="0.224984"/>
+<status status="PASS" start="2025-04-22T10:55:04.951426" elapsed="0.229859"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-04-17T17:25:53.311375" level="INFO">Tarefa "Tarefa teste 6967 editada" excluída com sucesso!</msg>
+<msg time="2025-04-22T10:55:05.182282" level="INFO">Tarefa "Tarefa teste 8594 editada" excluída com sucesso!</msg>
 <arg>Tarefa "${TAREFA}" excluída com sucesso!</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-17T17:25:53.310376" elapsed="0.000999"/>
+<status status="PASS" start="2025-04-22T10:55:05.181285" elapsed="0.000997"/>
 </kw>
-<status status="PASS" start="2025-04-17T17:25:53.042392" elapsed="0.268983"/>
+<status status="PASS" start="2025-04-22T10:55:04.911204" elapsed="0.272078"/>
 </kw>
 <kw name="Fechar o navegador" owner="tarefas">
 <kw name="Close Browser" owner="Browser">
-<msg time="2025-04-17T17:25:54.420692" level="INFO">Closed browser</msg>
+<msg time="2025-04-22T10:55:06.930482" level="INFO">Closed browser</msg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-04-17T17:25:53.319380" elapsed="1.101312"/>
+<status status="PASS" start="2025-04-22T10:55:05.185258" elapsed="1.745224"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Navegador fechado com sucesso!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-17T17:25:54.421699" elapsed="0.000994"/>
+<status status="PASS" start="2025-04-22T10:55:06.931482" elapsed="0.003005"/>
 </kw>
-<status status="PASS" start="2025-04-17T17:25:53.317372" elapsed="1.105321"/>
+<status status="PASS" start="2025-04-22T10:55:05.184266" elapsed="1.750221"/>
 </kw>
-<status status="PASS" start="2025-04-17T17:25:45.408256" elapsed="9.015437"/>
+<status status="PASS" start="2025-04-22T10:54:57.379981" elapsed="9.555504"/>
 </test>
-<status status="PASS" start="2025-04-17T17:25:44.966704" elapsed="9.561896"/>
+<status status="PASS" start="2025-04-22T10:54:56.910333" elapsed="10.189213"/>
 </suite>
-<status status="PASS" start="2025-04-17T17:25:44.963703" elapsed="9.645890"/>
+<status status="PASS" start="2025-04-22T10:54:56.906332" elapsed="10.348629"/>
 </suite>
-<status status="PASS" start="2025-04-17T17:25:44.912710" elapsed="9.698887"/>
+<status status="PASS" start="2025-04-22T10:54:56.843933" elapsed="10.415022"/>
 </suite>
 <statistics>
 <total>

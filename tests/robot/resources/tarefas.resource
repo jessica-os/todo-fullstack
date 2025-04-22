@@ -18,6 +18,7 @@ Abrir a página todo-list
     Log To Console    Página carregada com sucesso!
 
 Criar tarefa única
+     [Tags]  Criando a tarefa   
     ${rand}    Evaluate    random.randint(1000, 9999)    modules=random
     ${tarefa}    Set Variable    Tarefa teste ${rand}
     Fill Text    xpath=//input[@id="nova-tarefa"]    ${tarefa}
@@ -27,10 +28,12 @@ Criar tarefa única
     Log    Tarefa "${tarefa}" criada com sucesso!
 
 Validar tarefa pendente
+    [Tags]  Validando a criação da tarefa  
     Wait For Elements State    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]    visible    timeout=5s
     Log    Validando tarefa pendente "${TAREFA}"...
 
 Editar tarefa
+    [Tags]    Editando a tarefa
     Log    Editando a tarefa "${TAREFA}"...
     ${element}    Get Element    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]
     ${id}         Get Attribute    ${element}    data-id
@@ -45,20 +48,24 @@ Editar tarefa
     Log    Tarefa "${TAREFA}" editada com sucesso!
 
 Validar tarefa editada
+     [Tags]   Validando a edição da tarefa
     Wait For Elements State    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]    visible    timeout=5s
     Log    Validando se a tarefa "${TAREFA}" foi editada...
 
 Concluir tarefa
+     [Tags]    Concluindo a tarefa
     Log    Concluindo a tarefa "${TAREFA}"...
     Click    xpath=//ul[@id="lista-tarefas-pendentes"]//li[contains(., "${TAREFA}")]//button[1]
     Wait For Elements State    xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]    visible    timeout=5s
     Log    Tarefa "${TAREFA}" concluída com sucesso!
 
 Validar tarefa concluída
+     [Tags]    Validando a conclusão da tarefa
     Wait For Elements State    xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]    visible    timeout=5s
     Log    Validando se a tarefa "${TAREFA}" foi concluída...
 
 Excluir tarefa
+     [Tags]    Excluindo a tarefa
     Log    Excluindo a tarefa "${TAREFA}"...
     Click    xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]//button[contains(text(),"🗑️")]
     Wait For Elements State    xpath=//ul[@id="lista-tarefas-concluidas"]//li[contains(., "${TAREFA}")]    hidden    timeout=5s
