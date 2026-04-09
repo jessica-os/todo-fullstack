@@ -13,7 +13,7 @@ def client():
     app.config['TESTING'] = True
     return app.test_client()
 
-
+# comentário
 def test_get_tasks(client):
     response = client.get("/tasks")
 
