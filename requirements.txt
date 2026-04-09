@@ -2,3 +2,6 @@ Flask
 Flask-Cors
 Flask-SQLAlchemy
 gunicorn
+requests
+pytest
+pytest-cov
